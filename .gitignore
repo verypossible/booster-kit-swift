@@ -20,6 +20,7 @@ xcuserdata/
 ## Other
 *.moved-aside
 *.xcuserstate
+.ruby-gemset
 
 ## Obj-C/Swift specific
 *.hmap
