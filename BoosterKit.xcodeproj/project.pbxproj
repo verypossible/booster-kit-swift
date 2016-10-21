@@ -10,6 +10,7 @@
 		0BAD2D9FDDDDF2711D035E50 /* Pods_BoosterKitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11082A58495645D10F42C7A2 /* Pods_BoosterKitUITests.framework */; };
 		93499E13E2BCFD617AD6ED9D /* Pods_BoosterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF19054E15F7A738F47E5B /* Pods_BoosterKit.framework */; };
 		A22F2DDFEEEF5ED3B80F2E0C /* Pods_BoosterKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E189E363381AB431C35D8A /* Pods_BoosterKitTests.framework */; };
+		CE1BE4311DBA996600DD6C44 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BE4301DBA996600DD6C44 /* Demo.swift */; };
 		CECCBFF71DBA8FE600789698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCBFF61DBA8FE600789698 /* AppDelegate.swift */; };
 		CECCBFF91DBA8FE600789698 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCBFF81DBA8FE600789698 /* ViewController.swift */; };
 		CECCBFFC1DBA8FE600789698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECCBFFA1DBA8FE600789698 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		BD1E0882EC486B09220281C0 /* Pods-BoosterKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoosterKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoosterKit/Pods-BoosterKit.debug.xcconfig"; sourceTree = "<group>"; };
 		C11E36F72A29AB21CABDF6D2 /* Pods-BoosterKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoosterKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoosterKit/Pods-BoosterKit.release.xcconfig"; sourceTree = "<group>"; };
 		CB5BAFAD541CB8C0C2D485B7 /* Pods-BoosterKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoosterKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoosterKitTests/Pods-BoosterKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		CE1BE4301DBA996600DD6C44 /* Demo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Demo.swift; path = Models/Demo.swift; sourceTree = "<group>"; };
 		CECCBFF31DBA8FE600789698 /* BoosterKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoosterKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECCBFF61DBA8FE600789698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECCBFF81DBA8FE600789698 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE1BE42F1DBA993700DD6C44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE1BE4301DBA996600DD6C44 /* Demo.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		CECCBFEA1DBA8FE600789698 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		CECCBFF51DBA8FE600789698 /* BoosterKit */ = {
 			isa = PBXGroup;
 			children = (
+				CE1BE42F1DBA993700DD6C44 /* Models */,
 				CECCBFF61DBA8FE600789698 /* AppDelegate.swift */,
 				CECCBFF81DBA8FE600789698 /* ViewController.swift */,
 				CECCBFFA1DBA8FE600789698 /* Main.storyboard */,
@@ -448,6 +459,7 @@
 			files = (
 				CECCBFF91DBA8FE600789698 /* ViewController.swift in Sources */,
 				CECCBFF71DBA8FE600789698 /* AppDelegate.swift in Sources */,
+				CE1BE4311DBA996600DD6C44 /* Demo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
