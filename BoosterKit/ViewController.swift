@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var tableView: UITableView!
     var objects: Results<Demo>
 
+    
     required init?(coder aDecoder: NSCoder) {
         
         let realm = try! Realm()
