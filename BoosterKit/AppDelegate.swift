@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        NSLog("Realm DB: \(Realm.Configuration.defaultConfiguration.fileURL)")
+        
+        // Generate some seed data.
+        let realm = try! Realm()
+        if realm.objects(Demo.self).count < 3 {
+            let demo = Demo()
+            demo.name = "A Demo Model"
+            
+            try! realm.write {
+                realm.add(demo)
+                realm.add(demo)
+                realm.add(demo)
+            }
+        }
+        
         return true
     }
 
