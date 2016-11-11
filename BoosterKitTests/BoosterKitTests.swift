@@ -7,20 +7,27 @@
 //
 
 import XCTest
-@testable import ViewController
+@testable import BoosterKit
 import Quick
 import Nimble
-
+import RealmSwift
 
 class ViewControllerSpecs: QuickSpec {
-    
     override func spec() {
-        let viewController = ViewController()
+        let viewController = ViewController(coder: concreteCoder())
         
         describe("initialization") {
             it("initializes with seed data") {
-                expect(viewController!.objects.counts).to(equal(3))
+                expect(viewController!.objects.count).to(equal(3))
             }
         }
+    }
+    
+    fileprivate func concreteCoder() -> NSKeyedUnarchiver {
+        let data = NSMutableData()
+        let archiver = NSKeyedArchiver(forWritingWith: data)
+        archiver.finishEncoding()
+        
+        return NSKeyedUnarchiver(forReadingWith: data as Data)
     }
 }
