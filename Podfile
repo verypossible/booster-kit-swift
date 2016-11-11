@@ -8,6 +8,7 @@ target 'BoosterKit' do
 
   # Pods for BoosterKit
   pod 'RealmSwift'
+  pod 'BuddyBuildSDK'
 
   target 'BoosterKitTests' do
     inherit! :search_paths
@@ -19,7 +20,7 @@ target 'BoosterKit' do
 
   target 'BoosterKitUITests' do
     inherit! :search_paths
-    # Pods for testing
+    # Pods for UI testing
   end
 end
 
