@@ -24,13 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Generate some seed data.
         let realm = try! Realm()
         if realm.objects(Demo.self).count < 3 {
-            let demo = Demo()
-            demo.name = "A Demo Model"
+            let demo = Demo(value: ["name": "A Demo Model"])
+            let demo2 = Demo(value: ["name": "Another Demo Model"])
+            let demo3 = Demo(value: ["name": "Yet Another Demo Model"])
             
             try! realm.write {
                 realm.add(demo)
-                realm.add(demo)
-                realm.add(demo)
+                realm.add(demo2)
+                realm.add(demo3)
             }
         }
         
