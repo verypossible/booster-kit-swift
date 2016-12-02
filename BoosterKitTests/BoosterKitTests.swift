@@ -17,8 +17,9 @@ class ViewControllerSpecs: QuickSpec {
         let viewController = PhotosViewController(coder: concreteCoder())
         
         describe("initialization") {
-            it("initializes with photos") {
-                expect(viewController!.photos.count).to(beGreaterThan(0))
+            it("initializes") {
+                //TODO: This test is pretty useless since the compiler is doing the same thing 
+                expect(viewController!.selectedCellIndex).to(equal(0))
             }
         }
     }
