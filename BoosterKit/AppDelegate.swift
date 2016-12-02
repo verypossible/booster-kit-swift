@@ -22,24 +22,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NSLog("Realm DB: \(Realm.Configuration.defaultConfiguration.fileURL)")
         
-        let realm = try! Realm()
-        
-        if realm.objects(Photo.self).count == 0 {
-            // Fetch data from sample API.
+        // Fetch data from sample API.
+        let URL = "http://jsonplaceholder.typicode.com/photos"
+        Alamofire.request(URL).responseArray { (response: DataResponse<[Photo]>) in
+            let photoArray = response.result.value! as [Photo]
+            
             DispatchQueue.global(qos: .background).async {
-                let URL = "http://jsonplaceholder.typicode.com/photos"
-                Alamofire.request(URL).responseArray { (response: DataResponse<[Photo]>) in
-                    let photoArray = response.result.value! as [Photo]
-                    for photo in photoArray {
-                        try! realm.write{
-                            NSLog("Saving Photo \(photo)")
-                            realm.add(photo, update: true)
-                        }
-                    }
+                // Get realm and table instances for this thread.
+                let realm = try! Realm()
+                
+                realm.beginWrite()
+                
+                for photo in photoArray {
+                    NSLog("Photo \(photo)")
+                    realm.add(photo, update: true)
+                }
+                
+                do {
+                    NSLog("Saving photos.")
+                    try realm.commitWrite()
+                } catch {
+                    NSLog("Failed saving photos!")
                 }
                 
                 DispatchQueue.main.async {
-                    print("We probably want to reload the tableview here.")
+                    NSLog("We probably want to reload the tableview here.")
                 }
             }
         }
