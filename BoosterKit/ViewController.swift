@@ -12,13 +12,13 @@ import RealmSwift
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
-    var objects: Results<Demo>
+    var objects: Results<Photo>
 
     
     required init?(coder aDecoder: NSCoder) {
         
         let realm = try! Realm()
-        self.objects = realm.objects(Demo.self)
+        self.objects = realm.objects(Photo.self)
         
         super.init(coder: aDecoder)
     }
@@ -26,6 +26,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if self.objects.count == 0 {
+            let realm = try! Realm()
+            self.objects = realm.objects(Photo.self)
+        }
         
         // Register cell class in tableView.
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -42,7 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
         
-        cell.textLabel?.text = self.objects[indexPath.row].name
+        cell.textLabel?.text = self.objects[indexPath.row].title
         
         return cell
     }

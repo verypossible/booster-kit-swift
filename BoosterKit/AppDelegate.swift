@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,17 +22,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NSLog("Realm DB: \(Realm.Configuration.defaultConfiguration.fileURL)")
         
-        // Generate some seed data.
         let realm = try! Realm()
-        if realm.objects(Demo.self).count < 3 {
-            let demo = Demo(value: ["name": "A Demo Model"])
-            let demo2 = Demo(value: ["name": "Another Demo Model"])
-            let demo3 = Demo(value: ["name": "Yet Another Demo Model"])
-            
-            try! realm.write {
-                realm.add(demo)
-                realm.add(demo2)
-                realm.add(demo3)
+        
+        if realm.objects(Photo.self).count == 0 {
+            // Fetch data from sample API.
+            DispatchQueue.global(qos: .background).async {
+                let URL = "http://jsonplaceholder.typicode.com/photos"
+                Alamofire.request(URL).responseArray { (response: DataResponse<[Photo]>) in
+                    let photoArray = response.result.value! as [Photo]
+                    for photo in photoArray {
+                        try! realm.write{
+                            NSLog("Saving Photo \(photo)")
+                            realm.add(photo, update: true)
+                        }
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    print("We probably want to reload the tableview here.")
+                }
             }
         }
         
