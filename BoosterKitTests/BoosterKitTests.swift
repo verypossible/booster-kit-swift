@@ -17,8 +17,8 @@ class ViewControllerSpecs: QuickSpec {
         let viewController = ViewController(coder: concreteCoder())
         
         describe("initialization") {
-            it("initializes with seed data") {
-                expect(viewController!.objects.count).to(equal(3))
+            it("initializes with photos") {
+                expect(viewController!.objects.count).to(beGreaterThan(0))
             }
         }
     }
