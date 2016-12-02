@@ -9,6 +9,8 @@ target 'BoosterKit' do
   # Pods for BoosterKit
   pod 'RealmSwift'
   pod 'BuddyBuildSDK'
+  pod 'Alamofire'
+  pod 'AlamofireObjectMapper'
 
   target 'BoosterKitTests' do
     inherit! :search_paths

@@ -10,15 +10,16 @@
 		0BAD2D9FDDDDF2711D035E50 /* Pods_BoosterKitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11082A58495645D10F42C7A2 /* Pods_BoosterKitUITests.framework */; };
 		93499E13E2BCFD617AD6ED9D /* Pods_BoosterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF19054E15F7A738F47E5B /* Pods_BoosterKit.framework */; };
 		A22F2DDFEEEF5ED3B80F2E0C /* Pods_BoosterKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E189E363381AB431C35D8A /* Pods_BoosterKitTests.framework */; };
-		CE1BE4311DBA996600DD6C44 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BE4301DBA996600DD6C44 /* Demo.swift */; };
+		CE1BE4311DBA996600DD6C44 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BE4301DBA996600DD6C44 /* Photo.swift */; };
 		CE2E4B681DD614A5007A86E6 /* XCTestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */; };
 		CECCBFF71DBA8FE600789698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCBFF61DBA8FE600789698 /* AppDelegate.swift */; };
-		CECCBFF91DBA8FE600789698 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCBFF81DBA8FE600789698 /* ViewController.swift */; };
+		CECCBFF91DBA8FE600789698 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCBFF81DBA8FE600789698 /* PhotosViewController.swift */; };
 		CECCBFFC1DBA8FE600789698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECCBFFA1DBA8FE600789698 /* Main.storyboard */; };
 		CECCBFFE1DBA8FE600789698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECCBFFD1DBA8FE600789698 /* Assets.xcassets */; };
 		CECCC0011DBA8FE600789698 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECCBFFF1DBA8FE600789698 /* LaunchScreen.storyboard */; };
 		CECCC00C1DBA8FE700789698 /* BoosterKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCC00B1DBA8FE700789698 /* BoosterKitTests.swift */; };
 		CECCC0171DBA8FE700789698 /* BoosterKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCC0161DBA8FE700789698 /* BoosterKitUITests.swift */; };
+		CED569061DF1D47400AE2F92 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED569051DF1D47400AE2F92 /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,12 +48,12 @@
 		BD1E0882EC486B09220281C0 /* Pods-BoosterKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoosterKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoosterKit/Pods-BoosterKit.debug.xcconfig"; sourceTree = "<group>"; };
 		C11E36F72A29AB21CABDF6D2 /* Pods-BoosterKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoosterKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoosterKit/Pods-BoosterKit.release.xcconfig"; sourceTree = "<group>"; };
 		CB5BAFAD541CB8C0C2D485B7 /* Pods-BoosterKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoosterKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoosterKitTests/Pods-BoosterKitTests.release.xcconfig"; sourceTree = "<group>"; };
-		CE1BE4301DBA996600DD6C44 /* Demo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Demo.swift; path = Models/Demo.swift; sourceTree = "<group>"; };
+		CE1BE4301DBA996600DD6C44 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = Models/Photo.swift; sourceTree = "<group>"; };
 		CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtension.swift; sourceTree = "<group>"; };
 		CE2E4B691DD62BBC007A86E6 /* BoosterKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BoosterKit-Bridging-Header.h"; sourceTree = "<group>"; };
 		CECCBFF31DBA8FE600789698 /* BoosterKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoosterKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECCBFF61DBA8FE600789698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CECCBFF81DBA8FE600789698 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CECCBFF81DBA8FE600789698 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		CECCBFFB1DBA8FE600789698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CECCBFFD1DBA8FE600789698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CECCC0001DBA8FE600789698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		CECCC0121DBA8FE700789698 /* BoosterKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoosterKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECCC0161DBA8FE700789698 /* BoosterKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoosterKitUITests.swift; sourceTree = "<group>"; };
 		CECCC0181DBA8FE700789698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED569051DF1D47400AE2F92 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		DFEF19054E15F7A738F47E5B /* Pods_BoosterKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoosterKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,7 +109,7 @@
 		CE1BE42F1DBA993700DD6C44 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CE1BE4301DBA996600DD6C44 /* Demo.swift */,
+				CE1BE4301DBA996600DD6C44 /* Photo.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -139,7 +141,8 @@
 			children = (
 				CE1BE42F1DBA993700DD6C44 /* Models */,
 				CECCBFF61DBA8FE600789698 /* AppDelegate.swift */,
-				CECCBFF81DBA8FE600789698 /* ViewController.swift */,
+				CECCBFF81DBA8FE600789698 /* PhotosViewController.swift */,
+				CED569051DF1D47400AE2F92 /* PhotoDetailViewController.swift */,
 				CECCBFFA1DBA8FE600789698 /* Main.storyboard */,
 				CECCBFFD1DBA8FE600789698 /* Assets.xcassets */,
 				CECCBFFF1DBA8FE600789698 /* LaunchScreen.storyboard */,
@@ -463,9 +466,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECCBFF91DBA8FE600789698 /* ViewController.swift in Sources */,
+				CECCBFF91DBA8FE600789698 /* PhotosViewController.swift in Sources */,
 				CECCBFF71DBA8FE600789698 /* AppDelegate.swift in Sources */,
-				CE1BE4311DBA996600DD6C44 /* Demo.swift in Sources */,
+				CED569061DF1D47400AE2F92 /* PhotoDetailViewController.swift in Sources */,
+				CE1BE4311DBA996600DD6C44 /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

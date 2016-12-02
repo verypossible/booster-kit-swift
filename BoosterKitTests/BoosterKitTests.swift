@@ -14,11 +14,12 @@ import RealmSwift
 
 class ViewControllerSpecs: QuickSpec {
     override func spec() {
-        let viewController = ViewController(coder: concreteCoder())
+        let viewController = PhotosViewController(coder: concreteCoder())
         
         describe("initialization") {
-            it("initializes with seed data") {
-                expect(viewController!.objects.count).to(equal(3))
+            it("initializes") {
+                //TODO: This test is pretty useless since the compiler is doing the same thing 
+                expect(viewController!.selectedCellIndex).to(equal(0))
             }
         }
     }

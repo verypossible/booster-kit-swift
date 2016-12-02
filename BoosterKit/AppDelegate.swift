@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,17 +22,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NSLog("Realm DB: \(Realm.Configuration.defaultConfiguration.fileURL)")
         
-        // Generate some seed data.
-        let realm = try! Realm()
-        if realm.objects(Demo.self).count < 3 {
-            let demo = Demo(value: ["name": "A Demo Model"])
-            let demo2 = Demo(value: ["name": "Another Demo Model"])
-            let demo3 = Demo(value: ["name": "Yet Another Demo Model"])
+        // Fetch data from sample API.
+        let URL = "http://jsonplaceholder.typicode.com/photos"
+        Alamofire.request(URL).responseArray { (response: DataResponse<[Photo]>) in
+            let photoArray = response.result.value! as [Photo]
             
-            try! realm.write {
-                realm.add(demo)
-                realm.add(demo2)
-                realm.add(demo3)
+            DispatchQueue.global(qos: .background).async {
+                // Get realm and table instances for this thread.
+                let realm = try! Realm()
+                
+                realm.beginWrite()
+                
+                for photo in photoArray {
+                    NSLog("Photo \(photo)")
+                    realm.add(photo, update: true)
+                }
+                
+                do {
+                    NSLog("Saving photos.")
+                    try realm.commitWrite()
+                } catch {
+                    NSLog("Failed saving photos!")
+                }
+                
+                DispatchQueue.main.async {
+                    NSLog("We probably want to reload the tableview here.")
+                }
             }
         }
         
