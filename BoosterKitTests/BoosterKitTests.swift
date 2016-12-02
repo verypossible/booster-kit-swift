@@ -14,11 +14,11 @@ import RealmSwift
 
 class ViewControllerSpecs: QuickSpec {
     override func spec() {
-        let viewController = ViewController(coder: concreteCoder())
+        let viewController = PhotosViewController(coder: concreteCoder())
         
         describe("initialization") {
             it("initializes with photos") {
-                expect(viewController!.objects.count).to(beGreaterThan(0))
+                expect(viewController!.photos.count).to(beGreaterThan(0))
             }
         }
     }
