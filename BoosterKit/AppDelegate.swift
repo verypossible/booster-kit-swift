@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,35 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BuddyBuildSDK.setup()
         
         NSLog("Realm DB: \(Realm.Configuration.defaultConfiguration.fileURL)")
-        
-        // Fetch data from sample API.
-        let URL = "http://jsonplaceholder.typicode.com/photos"
-        Alamofire.request(URL).responseArray { (response: DataResponse<[Photo]>) in
-            let photoArray = response.result.value! as [Photo]
-            
-            DispatchQueue.global(qos: .background).async {
-                // Get realm and table instances for this thread.
-                let realm = try! Realm()
-                
-                realm.beginWrite()
-                
-                for photo in photoArray {
-                    NSLog("Photo \(photo)")
-                    realm.add(photo, update: true)
-                }
-                
-                do {
-                    NSLog("Saving photos.")
-                    try realm.commitWrite()
-                } catch {
-                    NSLog("Failed saving photos!")
-                }
-                
-                DispatchQueue.main.async {
-                    NSLog("We probably want to reload the tableview here.")
-                }
-            }
-        }
         
         return true
     }

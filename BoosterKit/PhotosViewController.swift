@@ -8,11 +8,17 @@
 
 import UIKit
 import RealmSwift
+import Alamofire
 
 class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
-    var photos: Results<Photo>
+    var photos: Results<Photo> {
+        didSet {
+            NSLog("Reloading tableView.")
+            self.tableView.reloadData()
+        }
+    }
     var selectedCellIndex: Int
     
     struct Constants {
@@ -33,13 +39,36 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        if self.photos.count == 0 {
-            let realm = try! Realm()
-            self.photos = realm.objects(Photo.self)
+        // Fetch data from sample API.
+        let URL = "http://jsonplaceholder.typicode.com/photos"
+        Alamofire.request(URL).responseArray { (response: DataResponse<[Photo]>) in
+            let photoArray = response.result.value! as [Photo]
+            
+            DispatchQueue.global(qos: .background).async {
+                // Get realm and table instances for this thread.
+                let realm = try! Realm()
+                
+                realm.beginWrite()
+                
+                for photo in photoArray {
+                    NSLog("Photo \(photo)")
+                    realm.add(photo, update: true)
+                }
+                
+                do {
+                    NSLog("Saving photos.")
+                    try realm.commitWrite()
+                } catch {
+                    NSLog("Failed saving photos!")
+                }
+                
+                DispatchQueue.main.async {
+                    // Get realm and table instances for the main thread.
+                    let realm = try! Realm()
+                    self.photos = realm.objects(Photo.self)
+                }
+            }
         }
-        
-        // Register cell class in tableView.
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,10 +83,11 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
+    
     // MARK: UITableView delegate methods
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "photoCell")! as UITableViewCell
         let photo = self.photos[indexPath.row]
         
         cell.textLabel?.text = photo.title
