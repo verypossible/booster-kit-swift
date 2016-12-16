@@ -8,22 +8,25 @@
 
 import UIKit
 import RealmSwift
-import Alamofire
+
 
 class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    struct Constants {
+        static let photoDetailSegueId = "photoDetailSegue"
+    }
     
     @IBOutlet var tableView: UITableView!
     var photos: Results<Photo> {
         didSet {
-            NSLog("Reloading tableView.")
-            self.tableView.reloadData()
+            // Ensure we're reloading in the main thread,
+            // otherwise the tableview won't properly reload.
+            DispatchQueue.main.async {
+                NSLog("Reloading tableView.")
+                self.tableView.reloadData()
+            }
         }
     }
     var selectedCellIndex: Int
-    
-    struct Constants {
-        static let photoDetailSegueId = "photoDetailSegue"
-    }
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -39,35 +42,12 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Fetch data from sample API.
-        let URL = "http://jsonplaceholder.typicode.com/photos"
-        Alamofire.request(URL).responseArray { (response: DataResponse<[Photo]>) in
-            let photoArray = response.result.value! as [Photo]
-            
-            DispatchQueue.global(qos: .background).async {
-                // Get realm and table instances for this thread.
-                let realm = try! Realm()
-                
-                realm.beginWrite()
-                
-                for photo in photoArray {
-                    NSLog("Photo \(photo)")
-                    realm.add(photo, update: true)
-                }
-                
-                do {
-                    NSLog("Saving photos.")
-                    try realm.commitWrite()
-                } catch {
-                    NSLog("Failed saving photos!")
-                }
-                
-                DispatchQueue.main.async {
-                    // Get realm and table instances for the main thread.
-                    let realm = try! Realm()
-                    self.photos = realm.objects(Photo.self)
-                }
-            }
+        // We're using the trailing closure syntax here:
+        // http://tinyurl.com/gnm3noo
+        APIManager.fetchData() {
+            // Get realm and table instances for the main thread.
+            let realm = try! Realm()
+            self.photos = realm.objects(Photo.self)
         }
     }
 
