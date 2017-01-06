@@ -15,6 +15,10 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         static let photoDetailSegueId = "photoDetailSegue"
     }
     
+    enum PhotosViewControllerError: Error {
+        case invalidThumbnail
+    }
+    
     @IBOutlet var tableView: UITableView!
     var photos: Results<Photo> {
         didSet {
@@ -63,20 +67,38 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
-    
-    // MARK: UITableView delegate methods
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func populateCell(cell: UITableViewCell, indexPath: IndexPath) throws -> UITableViewCell {
         
-        let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "photoCell")! as UITableViewCell
         let photo = self.photos[indexPath.row]
         
         cell.textLabel?.text = photo.title
         
         let url = NSURL(string: photo.thumbnailUrl) as! URL
-        let data = NSData(contentsOf: url) as! Data
-        let image = UIImage(data : data)
+        guard let data = NSData(contentsOf: url) else {
+            throw PhotosViewControllerError.invalidThumbnail
+        }
+        let image = UIImage(data : data as Data)
         
         cell.imageView?.image = image
+
+        
+        return cell
+    }
+    
+    // MARK: UITableView delegate methods
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "photoCell")! as UITableViewCell
+        
+        do {
+            try cell = populateCell(cell: cell, indexPath: indexPath)
+        }
+        catch PhotosViewControllerError.invalidThumbnail {
+            cell.imageView?.image = nil
+        }
+        catch {
+            NSLog("Error populating cell: \(error)")
+        }
         
         return cell
     }
