@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CECCC0061DBA8FE700789698"
-               BuildableName = "BoosterKitSpecs.xctest"
-               BlueprintName = "BoosterKitSpecs"
+               BuildableName = "BoosterKitTests.xctest"
+               BlueprintName = "BoosterKitTests"
                ReferencedContainer = "container:BoosterKit.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -19,7 +19,7 @@
 		CEB08BE51E0450700088E2D0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB08BE41E0450700088E2D0 /* APIManager.swift */; };
 		CECCBFF71DBA8FE600789698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCBFF61DBA8FE600789698 /* AppDelegate.swift */; };
 		CECCBFFE1DBA8FE600789698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECCBFFD1DBA8FE600789698 /* Assets.xcassets */; };
-		CECCC00C1DBA8FE700789698 /* PhotosViewControllerSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCC00B1DBA8FE700789698 /* PhotosViewControllerSpecs.swift */; };
+		CECCC00C1DBA8FE700789698 /* PhotosViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCC00B1DBA8FE700789698 /* PhotosViewControllerTests.swift */; };
 		CECCC0171DBA8FE700789698 /* BoosterKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCC0161DBA8FE700789698 /* BoosterKitUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,12 +61,13 @@
 		CECCBFF61DBA8FE600789698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECCBFFD1DBA8FE600789698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CECCC0021DBA8FE600789698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CECCC0071DBA8FE700789698 /* BoosterKitSpecs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoosterKitSpecs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CECCC00B1DBA8FE700789698 /* PhotosViewControllerSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewControllerSpecs.swift; sourceTree = "<group>"; };
+		CECCC0071DBA8FE700789698 /* BoosterKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoosterKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CECCC00B1DBA8FE700789698 /* PhotosViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewControllerTests.swift; sourceTree = "<group>"; };
 		CECCC00D1DBA8FE700789698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CECCC0121DBA8FE700789698 /* BoosterKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoosterKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECCC0161DBA8FE700789698 /* BoosterKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoosterKitUITests.swift; sourceTree = "<group>"; };
 		CECCC0181DBA8FE700789698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF83BC61E296C33004B4453 /* BoosterKitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BoosterKitTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		DFEF19054E15F7A738F47E5B /* Pods_BoosterKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoosterKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				CECCBFF51DBA8FE600789698 /* BoosterKit */,
-				CECCC00A1DBA8FE700789698 /* BoosterKitSpecs */,
+				CECCC00A1DBA8FE700789698 /* BoosterKitTests */,
 				CECCC0151DBA8FE700789698 /* BoosterKitUITests */,
 				CECCBFF41DBA8FE600789698 /* Products */,
 				D6EA0DCB1C2B5FA7B5ADB51F /* Pods */,
@@ -167,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				CECCBFF31DBA8FE600789698 /* BoosterKit.app */,
-				CECCC0071DBA8FE700789698 /* BoosterKitSpecs.xctest */,
+				CECCC0071DBA8FE700789698 /* BoosterKitTests.xctest */,
 				CECCC0121DBA8FE700789698 /* BoosterKitUITests.xctest */,
 			);
 			name = Products;
@@ -187,14 +188,14 @@
 			path = BoosterKit;
 			sourceTree = "<group>";
 		};
-		CECCC00A1DBA8FE700789698 /* BoosterKitSpecs */ = {
+		CECCC00A1DBA8FE700789698 /* BoosterKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				CECCC00B1DBA8FE700789698 /* PhotosViewControllerSpecs.swift */,
+				CECCC00B1DBA8FE700789698 /* PhotosViewControllerTests.swift */,
 				CECCC00D1DBA8FE700789698 /* Info.plist */,
 				CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */,
+				CEF83BC61E296C33004B4453 /* BoosterKitTests-Bridging-Header.h */,
 			);
-			name = BoosterKitSpecs;
 			path = BoosterKitTests;
 			sourceTree = "<group>";
 		};
@@ -243,9 +244,9 @@
 			productReference = CECCBFF31DBA8FE600789698 /* BoosterKit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CECCC0061DBA8FE700789698 /* BoosterKitSpecs */ = {
+		CECCC0061DBA8FE700789698 /* BoosterKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CECCC01E1DBA8FE700789698 /* Build configuration list for PBXNativeTarget "BoosterKitSpecs" */;
+			buildConfigurationList = CECCC01E1DBA8FE700789698 /* Build configuration list for PBXNativeTarget "BoosterKitTests" */;
 			buildPhases = (
 				D0AE32704418FB39977AFF5D /* [CP] Check Pods Manifest.lock */,
 				CECCC0031DBA8FE700789698 /* Sources */,
@@ -259,9 +260,9 @@
 			dependencies = (
 				CECCC0091DBA8FE700789698 /* PBXTargetDependency */,
 			);
-			name = BoosterKitSpecs;
+			name = BoosterKitTests;
 			productName = BoosterKitTests;
-			productReference = CECCC0071DBA8FE700789698 /* BoosterKitSpecs.xctest */;
+			productReference = CECCC0071DBA8FE700789698 /* BoosterKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		CECCC0111DBA8FE700789698 /* BoosterKitUITests */ = {
@@ -302,6 +303,7 @@
 					};
 					CECCC0061DBA8FE700789698 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = CECCBFF21DBA8FE600789698;
 					};
@@ -326,7 +328,7 @@
 			projectRoot = "";
 			targets = (
 				CECCBFF21DBA8FE600789698 /* BoosterKit */,
-				CECCC0061DBA8FE700789698 /* BoosterKitSpecs */,
+				CECCC0061DBA8FE700789698 /* BoosterKitTests */,
 				CECCC0111DBA8FE700789698 /* BoosterKitUITests */,
 			);
 		};
@@ -515,7 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE2E4B681DD614A5007A86E6 /* XCTestCaseExtension.swift in Sources */,
-				CECCC00C1DBA8FE700789698 /* PhotosViewControllerSpecs.swift in Sources */,
+				CECCC00C1DBA8FE700789698 /* PhotosViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,10 +679,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BoosterKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = spartan.BoosterKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BoosterKitTests/BoosterKitTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoosterKit.app/BoosterKit";
 			};
@@ -692,10 +697,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BoosterKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = spartan.BoosterKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BoosterKitTests/BoosterKitTests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoosterKit.app/BoosterKit";
 			};
@@ -750,7 +757,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CECCC01E1DBA8FE700789698 /* Build configuration list for PBXNativeTarget "BoosterKitSpecs" */ = {
+		CECCC01E1DBA8FE700789698 /* Build configuration list for PBXNativeTarget "BoosterKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CECCC01F1DBA8FE700789698 /* Debug */,
