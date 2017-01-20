@@ -13,11 +13,11 @@ import RealmSwift
 class APIManager {
     
     struct Constants {
-        static let apiURL = "http://jsonplaceholder.typicode.com/photos"
+        static let apiURL = "https://jsonplaceholder.typicode.com"
     }
     
     public class func fetchData (completionClosure: @escaping () -> ()) {
-        Alamofire.request(Constants.apiURL).responseArray { (response: DataResponse<[Photo]>) in
+        Alamofire.request("\(Constants.apiURL)/photos").responseArray { (response: DataResponse<[Photo]>) in
             let photoArray = response.result.value! as [Photo]
             
             DispatchQueue.global(qos: .background).async {
@@ -43,6 +43,26 @@ class APIManager {
                     completionClosure()
                 }
             }
+        }
+    }
+    
+    public class func authenticateUser (email: String, password: String, completionClosure: @escaping () -> ()) {
+        let parameters = [
+            "email": email,
+            "password": password
+        ]
+        
+        Alamofire.request("\(Constants.apiURL)/auth/login", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .validate()
+            .responseJSON { response in
+                print("Success: \(response.result.isSuccess)")
+                print("Response String: \(response.response)")
+                switch response.result {
+                case .success:
+                    completionClosure()
+                case .failure(let error):
+                    print(error)
+                }
         }
     }
 }

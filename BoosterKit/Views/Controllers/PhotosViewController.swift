@@ -46,13 +46,9 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // We're using the trailing closure syntax here:
-        // http://tinyurl.com/gnm3noo
-        APIManager.fetchData() {
-            // Get realm and table instances for the main thread.
-            let realm = try! Realm()
-            self.photos = realm.objects(Photo.self)
-        }
+        // Get realm and table instances for the main thread.
+        let realm = try! Realm()
+        self.photos = realm.objects(Photo.self)
     }
 
     override func didReceiveMemoryWarning() {

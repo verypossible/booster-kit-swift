@@ -21,6 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NSLog("Realm DB: \(Realm.Configuration.defaultConfiguration.fileURL)")
         
+        // We're using the trailing closure syntax here:
+        // http://tinyurl.com/gnm3noo
+        APIManager.fetchData {
+            NSLog("Photos successfully fetched from API.")
+        }
+        
         return true
     }
 
