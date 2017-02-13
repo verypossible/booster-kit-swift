@@ -6,6 +6,7 @@
 //  Copyright © 2017 Spartan. All rights reserved.
 //
 
+import UIKit
 import KIF
 import RealmSwift
 
@@ -22,6 +23,6 @@ class PhotosViewControllerFeatures: KIFTestCase {
     }
     
     func testPresenceOfMyPreciousView() {
-        tester().waitForView(withAccessibilityLabel: "Welcome")
+        tester().waitForView(withAccessibilityLabel: "Photo List")
     }
 }

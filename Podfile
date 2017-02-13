@@ -20,7 +20,7 @@ target 'BoosterKit' do
     pod 'Nimble'
   end
 
-  target 'BoosterKitUITests' do
+  target 'BoosterKitFeatures' do
     inherit! :search_paths
     # Pods for UI testing
     

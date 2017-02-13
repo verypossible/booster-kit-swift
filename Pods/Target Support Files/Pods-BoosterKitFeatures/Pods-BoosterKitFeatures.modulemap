@@ -1,0 +1,6 @@
+framework module Pods_BoosterKitFeatures {
+  umbrella header "Pods-BoosterKitFeatures-umbrella.h"
+
+  export *
+  module * { export * }
+}

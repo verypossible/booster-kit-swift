@@ -43,9 +43,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CECCC0111DBA8FE700789698"
-               BuildableName = "BoosterKitUITests.xctest"
-               BlueprintName = "BoosterKitUITests"
+               BlueprintIdentifier = "CE1ECBA91E52443B00F4A7C9"
+               BuildableName = "BoosterKitFeatures.xctest"
+               BlueprintName = "BoosterKitFeatures"
                ReferencedContainer = "container:BoosterKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
