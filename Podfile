@@ -23,6 +23,8 @@ target 'BoosterKit' do
   target 'BoosterKitUITests' do
     inherit! :search_paths
     # Pods for UI testing
+    
+    pod 'KIF'
   end
 end
 

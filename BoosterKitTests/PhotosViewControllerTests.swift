@@ -1,6 +1,6 @@
 //
-//  PhotosViewControllerSpecs.swift
-//  BoosterKitSpecs
+//  PhotosViewControllerTests.swift
+//  BoosterKitTests
 //
 //  Created by Travis Palmer on 10/21/16.
 //  Copyright © 2016 Spartan. All rights reserved.

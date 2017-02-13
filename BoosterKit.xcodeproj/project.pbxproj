@@ -11,7 +11,10 @@
 		93499E13E2BCFD617AD6ED9D /* Pods_BoosterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF19054E15F7A738F47E5B /* Pods_BoosterKit.framework */; };
 		A22F2DDFEEEF5ED3B80F2E0C /* Pods_BoosterKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E189E363381AB431C35D8A /* Pods_BoosterKitTests.framework */; };
 		CE1BE4311DBA996600DD6C44 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BE4301DBA996600DD6C44 /* Photo.swift */; };
+		CE1ECBA51E522EAB00F4A7C9 /* XCTestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1ECBA41E522EAB00F4A7C9 /* XCTestCaseExtension.swift */; };
 		CE2E4B681DD614A5007A86E6 /* XCTestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */; };
+		CE3F0D051E522D7F000282F5 /* KIFTestActorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F0D031E522D7F000282F5 /* KIFTestActorExtension.swift */; };
+		CE3F0D061E522D7F000282F5 /* PhotosViewControllerFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F0D041E522D7F000282F5 /* PhotosViewControllerFeatures.swift */; };
 		CEB08BDD1E044D740088E2D0 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB08BDB1E044D740088E2D0 /* PhotoDetailViewController.swift */; };
 		CEB08BDE1E044D740088E2D0 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB08BDC1E044D740088E2D0 /* PhotosViewController.swift */; };
 		CEB08BE11E044D840088E2D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB08BDF1E044D840088E2D0 /* LaunchScreen.storyboard */; };
@@ -20,7 +23,6 @@
 		CECCBFF71DBA8FE600789698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCBFF61DBA8FE600789698 /* AppDelegate.swift */; };
 		CECCBFFE1DBA8FE600789698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECCBFFD1DBA8FE600789698 /* Assets.xcassets */; };
 		CECCC00C1DBA8FE700789698 /* PhotosViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCC00B1DBA8FE700789698 /* PhotosViewControllerTests.swift */; };
-		CECCC0171DBA8FE700789698 /* BoosterKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCC0161DBA8FE700789698 /* BoosterKitUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +52,12 @@
 		C11E36F72A29AB21CABDF6D2 /* Pods-BoosterKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoosterKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoosterKit/Pods-BoosterKit.release.xcconfig"; sourceTree = "<group>"; };
 		CB5BAFAD541CB8C0C2D485B7 /* Pods-BoosterKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoosterKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoosterKitTests/Pods-BoosterKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		CE1BE4301DBA996600DD6C44 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = Models/Photo.swift; sourceTree = "<group>"; };
+		CE1ECBA11E522DC700F4A7C9 /* BoosterKitUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BoosterKitUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE1ECBA41E522EAB00F4A7C9 /* XCTestCaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtension.swift; sourceTree = "<group>"; };
 		CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtension.swift; sourceTree = "<group>"; };
 		CE2E4B691DD62BBC007A86E6 /* BoosterKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BoosterKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE3F0D031E522D7F000282F5 /* KIFTestActorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KIFTestActorExtension.swift; sourceTree = "<group>"; };
+		CE3F0D041E522D7F000282F5 /* PhotosViewControllerFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewControllerFeatures.swift; sourceTree = "<group>"; };
 		CEB08BDB1E044D740088E2D0 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoDetailViewController.swift; path = Views/Controllers/PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		CEB08BDC1E044D740088E2D0 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotosViewController.swift; path = Views/Controllers/PhotosViewController.swift; sourceTree = "<group>"; };
 		CEB08BDF1E044D840088E2D0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Views/Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,7 +71,6 @@
 		CECCC00B1DBA8FE700789698 /* PhotosViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewControllerTests.swift; sourceTree = "<group>"; };
 		CECCC00D1DBA8FE700789698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CECCC0121DBA8FE700789698 /* BoosterKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoosterKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CECCC0161DBA8FE700789698 /* BoosterKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoosterKitUITests.swift; sourceTree = "<group>"; };
 		CECCC0181DBA8FE700789698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEF83BC61E296C33004B4453 /* BoosterKitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BoosterKitTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		DFEF19054E15F7A738F47E5B /* Pods_BoosterKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoosterKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,8 +207,11 @@
 		CECCC0151DBA8FE700789698 /* BoosterKitUITests */ = {
 			isa = PBXGroup;
 			children = (
-				CECCC0161DBA8FE700789698 /* BoosterKitUITests.swift */,
+				CE3F0D031E522D7F000282F5 /* KIFTestActorExtension.swift */,
+				CE3F0D041E522D7F000282F5 /* PhotosViewControllerFeatures.swift */,
 				CECCC0181DBA8FE700789698 /* Info.plist */,
+				CE1ECBA11E522DC700F4A7C9 /* BoosterKitUITests-Bridging-Header.h */,
+				CE1ECBA41E522EAB00F4A7C9 /* XCTestCaseExtension.swift */,
 			);
 			path = BoosterKitUITests;
 			sourceTree = "<group>";
@@ -309,6 +317,7 @@
 					};
 					CECCC0111DBA8FE700789698 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = CECCBFF21DBA8FE600789698;
 					};
@@ -525,7 +534,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECCC0171DBA8FE700789698 /* BoosterKitUITests.swift in Sources */,
+				CE3F0D061E522D7F000282F5 /* PhotosViewControllerFeatures.swift in Sources */,
+				CE1ECBA51E522EAB00F4A7C9 /* XCTestCaseExtension.swift in Sources */,
+				CE3F0D051E522D7F000282F5 /* KIFTestActorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,10 +724,13 @@
 			baseConfigurationReference = B41F0509C97C4D1547C103B8 /* Pods-BoosterKitUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BoosterKitUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = spartan.BoosterKitUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BoosterKitUITests/BoosterKitUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = BoosterKit;
 			};
@@ -727,10 +741,12 @@
 			baseConfigurationReference = B17454E5344DF4760E266127 /* Pods-BoosterKitUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BoosterKitUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = spartan.BoosterKitUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BoosterKitUITests/BoosterKitUITests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = BoosterKit;
 			};

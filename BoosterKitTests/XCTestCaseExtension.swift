@@ -1,6 +1,6 @@
 //
 //  XCTestCaseExtension.swift
-//  BoosterKit
+//  BoosterKitTests
 //
 //  Created by Travis Palmer on 11/11/16.
 //  Copyright © 2016 Spartan. All rights reserved.

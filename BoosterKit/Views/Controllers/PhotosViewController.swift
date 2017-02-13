@@ -35,8 +35,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     required init?(coder aDecoder: NSCoder) {
         
-        let realm = try! Realm()
-        self.photos = realm.objects(Photo.self)
+        self.photos = try! Realm().objects(Photo.self)
         self.selectedCellIndex = 0
         
         super.init(coder: aDecoder)
@@ -50,8 +49,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // http://tinyurl.com/gnm3noo
         APIManager.fetchData() {
             // Get realm and table instances for the main thread.
-            let realm = try! Realm()
-            self.photos = realm.objects(Photo.self)
+            self.photos = try! Realm().objects(Photo.self)
         }
     }
 
