@@ -11,8 +11,21 @@ import XCTest
 import Quick
 import Nimble
 import RealmSwift
+import Nocilla
 
 class PhotosViewControllerSpecs: QuickSpec {
+    override func setUp() {
+        super.setUp()
+        
+        LSNocilla.sharedInstance().start()
+    }
+    
+    override func tearDown() {
+        LSNocilla.sharedInstance().stop()
+        
+        super.tearDown()
+    }
+    
     override func spec() {
         Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
         
@@ -28,6 +41,16 @@ class PhotosViewControllerSpecs: QuickSpec {
             
             it("initializes photos") {
                 expect(viewController!.photos.count).to(equal(3))
+            }
+        }
+        
+        describe("viewDidLoad") {
+            it("fetches data from the API") {
+                let viewController = PhotosViewController(coder: self.concreteCoder())!
+                
+                viewController.viewDidLoad()
+                
+                expect(viewController.photos.count).to(equal(4))
             }
         }
     }

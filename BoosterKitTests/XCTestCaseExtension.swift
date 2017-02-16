@@ -8,6 +8,7 @@
 
 import XCTest
 import RealmSwift
+import Nocilla
 
 extension XCTestCase {
     override open func setUp() {
@@ -18,5 +19,13 @@ extension XCTestCase {
         // from other tests or the application itself, and because they're in-memory,
         // there's nothing that needs to be cleaned up.
         Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
+        
+        LSNocilla.sharedInstance().start()
+    }
+    
+    override open func tearDown() {
+        LSNocilla.sharedInstance().stop()
+        
+        super.tearDown()
     }
 }

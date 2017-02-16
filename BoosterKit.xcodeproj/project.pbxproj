@@ -772,6 +772,7 @@
 				CE1ECBB31E52443B00F4A7C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CECCBFEE1DBA8FE600789698 /* Build configuration list for PBXProject "BoosterKit" */ = {
 			isa = XCConfigurationList;
