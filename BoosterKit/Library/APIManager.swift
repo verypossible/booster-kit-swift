@@ -13,7 +13,7 @@ import RealmSwift
 class APIManager {
     
     struct Constants {
-        static let apiURL = "http://jsonplaceholder.typicode.com/photos"
+        static let apiURL = "https://jsonplaceholder.typicode.com/photos"
     }
     
     public class func fetchData (completionClosure: @escaping () -> ()) {

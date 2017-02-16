@@ -18,7 +18,7 @@ target 'BoosterKit' do
     
     pod 'Quick'
     pod 'Nimble'
-    pod 'Nocilla'
+    pod 'Nocilla', git: 'git@github.com:pcantrell/Nocilla.git', branch: 'null-annotations'
   end
 
   target 'BoosterKitFeatures' do
