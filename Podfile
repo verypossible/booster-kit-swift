@@ -18,11 +18,14 @@ target 'BoosterKit' do
     
     pod 'Quick'
     pod 'Nimble'
+    pod 'Nocilla', git: 'git@github.com:pcantrell/Nocilla.git', branch: 'null-annotations'
   end
 
-  target 'BoosterKitUITests' do
+  target 'BoosterKitFeatures' do
     inherit! :search_paths
     # Pods for UI testing
+    
+    pod 'KIF'
   end
 end
 

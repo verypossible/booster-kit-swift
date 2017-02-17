@@ -4,33 +4,51 @@ PODS:
     - Alamofire (~> 4.0)
     - ObjectMapper (~> 2.0)
   - BuddyBuildSDK (1.0.12)
+  - KIF (3.5.1):
+    - KIF/Core (= 3.5.1)
+  - KIF/Core (3.5.1)
   - Nimble (5.1.0)
+  - Nocilla (0.11.0)
   - ObjectMapper (2.1.0)
   - Quick (0.10.0)
-  - Realm (2.0.2):
-    - Realm/Headers (= 2.0.2)
-  - Realm/Headers (2.0.2)
-  - RealmSwift (2.0.2):
-    - Realm (= 2.0.2)
+  - Realm (2.4.2):
+    - Realm/Headers (= 2.4.2)
+  - Realm/Headers (2.4.2)
+  - RealmSwift (2.4.2):
+    - Realm (= 2.4.2)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireObjectMapper
   - BuddyBuildSDK
+  - KIF
   - Nimble
+  - Nocilla (from `git@github.com:pcantrell/Nocilla.git`, branch `null-annotations`)
   - Quick
   - RealmSwift
+
+EXTERNAL SOURCES:
+  Nocilla:
+    :branch: null-annotations
+    :git: git@github.com:pcantrell/Nocilla.git
+
+CHECKOUT OPTIONS:
+  Nocilla:
+    :commit: 4793459646076a6ce66137133cc4cfe6e5b9543a
+    :git: git@github.com:pcantrell/Nocilla.git
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
   BuddyBuildSDK: f4682598772ae66c9ef5554d2d78d0a19fb413a0
+  KIF: 082eb65279e51c3092923802849eb796a04982ab
   Nimble: 5ea121a2eda60440287054cde077fc0ad22227b3
+  Nocilla: 7af7a386071150cc8aa5da4da97d060f049dd61c
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
-  Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
-  RealmSwift: 0eb5070d851cba7c66e841ca756d83609dc78bc8
+  Realm: d27b758e12d62a3371879a065d4c40aa212c5a54
+  RealmSwift: 9556c0fe0f0cfecacfb755ae9e68ff379fc6bead
 
-PODFILE CHECKSUM: c8035477ec0c988241873181b0ca1c7683717d66
+PODFILE CHECKSUM: 699a693030793ac5b6e1b2829be1ba2972f0a6fc
 
 COCOAPODS: 1.1.1
