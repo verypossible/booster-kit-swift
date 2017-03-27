@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BuddyBuildSDK.setup()
         
         NSLog("Realm DB: \(Realm.Configuration.defaultConfiguration.fileURL)")
+        NSLog("DarkSkyAPIKey: \(Bundle.main.infoDictionary?["DarkSkyAPIKey"] as! String)")
         
         return true
     }

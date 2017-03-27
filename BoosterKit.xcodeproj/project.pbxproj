@@ -15,6 +15,11 @@
 		CE1ECBBD1E5244CF00F4A7C9 /* PhotosViewControllerFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1ECBBA1E5244CF00F4A7C9 /* PhotosViewControllerFeatures.swift */; };
 		CE1ECBBE1E5244CF00F4A7C9 /* XCTestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1ECBBB1E5244CF00F4A7C9 /* XCTestCaseExtension.swift */; };
 		CE2E4B681DD614A5007A86E6 /* XCTestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */; };
+		CE529BAD1E892A57007FCED6 /* check_config_files.rb in Resources */ = {isa = PBXBuildFile; fileRef = CE529BA91E892A57007FCED6 /* check_config_files.rb */; };
+		CE529BAE1E892A57007FCED6 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE529BAA1E892A57007FCED6 /* Debug.xcconfig */; };
+		CE529BAF1E892A57007FCED6 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE529BAB1E892A57007FCED6 /* Release.xcconfig */; };
+		CE529BB21E892A9A007FCED6 /* BoosterKit.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE529BB11E892A9A007FCED6 /* BoosterKit.xcconfig */; };
+		CE529BB41E893008007FCED6 /* buddybuild_prebuild.sh in Resources */ = {isa = PBXBuildFile; fileRef = CE529BB31E893008007FCED6 /* buddybuild_prebuild.sh */; };
 		CEB08BDD1E044D740088E2D0 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB08BDB1E044D740088E2D0 /* PhotoDetailViewController.swift */; };
 		CEB08BDE1E044D740088E2D0 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB08BDC1E044D740088E2D0 /* PhotosViewController.swift */; };
 		CEB08BE11E044D840088E2D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB08BDF1E044D840088E2D0 /* LaunchScreen.storyboard */; };
@@ -63,6 +68,11 @@
 		CE1ECBBB1E5244CF00F4A7C9 /* XCTestCaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtension.swift; sourceTree = "<group>"; };
 		CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtension.swift; sourceTree = "<group>"; };
 		CE2E4B691DD62BBC007A86E6 /* BoosterKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BoosterKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE529BA91E892A57007FCED6 /* check_config_files.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = check_config_files.rb; path = Config/check_config_files.rb; sourceTree = "<group>"; };
+		CE529BAA1E892A57007FCED6 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Config/Debug.xcconfig; sourceTree = "<group>"; };
+		CE529BAB1E892A57007FCED6 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Config/Release.xcconfig; sourceTree = "<group>"; };
+		CE529BB11E892A9A007FCED6 /* BoosterKit.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = BoosterKit.xcconfig; path = Config/BoosterKit.xcconfig; sourceTree = "<group>"; };
+		CE529BB31E893008007FCED6 /* buddybuild_prebuild.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = buddybuild_prebuild.sh; sourceTree = "<group>"; };
 		CEB08BDB1E044D740088E2D0 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoDetailViewController.swift; path = Views/Controllers/PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		CEB08BDC1E044D740088E2D0 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotosViewController.swift; path = Views/Controllers/PhotosViewController.swift; sourceTree = "<group>"; };
 		CEB08BDF1E044D840088E2D0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Views/Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -138,6 +148,17 @@
 			path = BoosterKitFeatures;
 			sourceTree = "<group>";
 		};
+		CE529BA81E892A45007FCED6 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				CE529BA91E892A57007FCED6 /* check_config_files.rb */,
+				CE529BB11E892A9A007FCED6 /* BoosterKit.xcconfig */,
+				CE529BAA1E892A57007FCED6 /* Debug.xcconfig */,
+				CE529BAB1E892A57007FCED6 /* Release.xcconfig */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
 		CEB08BD81E044C090088E2D0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +203,7 @@
 				CECCBFF41DBA8FE600789698 /* Products */,
 				D6EA0DCB1C2B5FA7B5ADB51F /* Pods */,
 				C9E9E29A624DEA86E96E52ED /* Frameworks */,
+				CE529BB31E893008007FCED6 /* buddybuild_prebuild.sh */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,6 +220,7 @@
 		CECCBFF51DBA8FE600789698 /* BoosterKit */ = {
 			isa = PBXGroup;
 			children = (
+				CE529BA81E892A45007FCED6 /* Config */,
 				CEB08BE31E04504C0088E2D0 /* Library */,
 				CE1BE42F1DBA993700DD6C44 /* Models */,
 				CEB08BD81E044C090088E2D0 /* Views */,
@@ -361,8 +384,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE529BB21E892A9A007FCED6 /* BoosterKit.xcconfig in Resources */,
 				CEB08BE21E044D840088E2D0 /* Main.storyboard in Resources */,
+				CE529BAD1E892A57007FCED6 /* check_config_files.rb in Resources */,
+				CE529BAE1E892A57007FCED6 /* Debug.xcconfig in Resources */,
 				CECCBFFE1DBA8FE600789698 /* Assets.xcassets in Resources */,
+				CE529BB41E893008007FCED6 /* buddybuild_prebuild.sh in Resources */,
+				CE529BAF1E892A57007FCED6 /* Release.xcconfig in Resources */,
 				CEB08BE11E044D840088E2D0 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +629,7 @@
 		};
 		CECCC0191DBA8FE700789698 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE529BB11E892A9A007FCED6 /* BoosterKit.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -652,6 +681,7 @@
 		};
 		CECCC01A1DBA8FE700789698 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE529BB11E892A9A007FCED6 /* BoosterKit.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -696,7 +726,7 @@
 		};
 		CECCC01C1DBA8FE700789698 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD1E0882EC486B09220281C0 /* Pods-BoosterKit.debug.xcconfig */;
+			baseConfigurationReference = CE529BAA1E892A57007FCED6 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -714,7 +744,7 @@
 		};
 		CECCC01D1DBA8FE700789698 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C11E36F72A29AB21CABDF6D2 /* Pods-BoosterKit.release.xcconfig */;
+			baseConfigurationReference = CE529BAB1E892A57007FCED6 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
