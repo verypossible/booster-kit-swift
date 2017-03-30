@@ -78,7 +78,6 @@ static LSNocilla *sharedInstace = nil;
 - (LSStubResponse *)responseForRequest:(id<LSHTTPRequest>)actualRequest {
     NSArray* requests = [LSNocilla sharedInstance].stubbedRequests;
 
-    NSLog([actualRequest description]);
     for(LSStubRequest *someStubbedRequest in requests) {
         if ([someStubbedRequest matchesRequest:actualRequest]) {
             return someStubbedRequest.response;
