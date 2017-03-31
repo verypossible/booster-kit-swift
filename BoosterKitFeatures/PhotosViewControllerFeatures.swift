@@ -11,17 +11,17 @@ import KIF
 import RealmSwift
 
 class PhotosViewControllerFeatures: KIFTestCase {
-    
+
     override func setUp() {
         super.setUp()
-        
+
         Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
-    
+
     func testPresenceOfPhotoList() {
         tester().waitForView(withAccessibilityLabel: "Photo List")
     }
