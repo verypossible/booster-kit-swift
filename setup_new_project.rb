@@ -1,14 +1,18 @@
 #!/usr/bin/env ruby
 # Inspired by: https://gist.github.com/dvdsgl/4600317
 
+require 'byebug'
+
 # No changes are made unless -f is specified
 DRY = !(ARGV.include? "-f")
 
 # Replace all occurrences of this with that in file.
 def replace file, this, that
   content = File.read file
+  # content = File.open(file, "r").read
   if content.include? this
-    puts "#{file} (#{content.scan(this).count} occurrences of '#{this}')"
+    byebug
+    # puts "#{file} (#{content.scan(this).count} occurrences of '#{this}')"
     unless DRY
       content.gsub! this, that
       File.open(file, "w") { |f| f.puts content }
@@ -42,11 +46,13 @@ def rename dir, this, that
   end
 end
 
-dir, this, that = ARGV.reject { |x| x =~ /^-/ }
-if that
-  rename dir, this, that
-  mv dir, dir.sub(this, that) if dir.include? this
+arguments = ARGV.reject { |x| x =~ /^-/ }
+if arguments.count > 0
+  new_name = arguments.first
+  dir = "./"
+  rename dir, "BoosterKit", new_name
+  mv dir, dir.sub("BoosterKit", new_name) if dir.include? "BoosterKit"
   puts "(You must include -f to actually perform the replacements)" if DRY
 else
-  puts "Usage: rename.rb DIRECTORY REPLACE_THIS WITH_THIS"
+  puts "Usage: setup_new_project.rb PROJECT_NAME"
 end
