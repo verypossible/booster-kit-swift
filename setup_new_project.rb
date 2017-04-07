@@ -2,6 +2,7 @@
 # Inspired by: https://gist.github.com/dvdsgl/4600317
 
 require 'byebug'
+require 'ruby-filemagic'
 
 # No changes are made unless -f is specified
 DRY = !(ARGV.include? "-f")
@@ -9,10 +10,8 @@ DRY = !(ARGV.include? "-f")
 # Replace all occurrences of this with that in file.
 def replace file, this, that
   content = File.read file
-  # content = File.open(file, "r").read
-  if content.include? this
-    byebug
-    # puts "#{file} (#{content.scan(this).count} occurrences of '#{this}')"
+  if content.include?(this) && !is_binary?(file)
+    puts "#{file} (#{content.scan(this).count} occurrences of '#{this}')"
     unless DRY
       content.gsub! this, that
       File.open(file, "w") { |f| f.puts content }
@@ -43,6 +42,15 @@ def rename dir, this, that
     Dir["*#{this}*"].each do |f|
       mv f, f.sub(this, that)
     end
+  end
+end
+
+def is_binary?(filename)
+  begin
+    fm = FileMagic.new(FileMagic::MAGIC_MIME)
+    fm.file(filename) !~ /^text\//
+  ensure
+    fm.close
   end
 end
 
