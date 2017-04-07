@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # Inspired by: https://gist.github.com/dvdsgl/4600317
 
-require 'byebug'
+require 'fileutils'
 require 'ruby-filemagic'
 
 # No changes are made unless -f is specified
@@ -54,13 +54,31 @@ def is_binary?(filename)
   end
 end
 
+def setup_config_files
+  puts "Setting up configuration files"
+  `./BoosterKit/Config/check_config_files.rb` unless DRY
+end
+
+def setup_pods
+  puts "Removing Pods Directory"
+  FileUtils.remove_dir("Pods") unless DRY
+
+  puts "rm Podfile.lock"
+  FileUtils.rm("Podfile.lock") unless DRY
+
+  puts 'pod install'
+  `pod install` unless DRY
+end
+
 arguments = ARGV.reject { |x| x =~ /^-/ }
 if arguments.count > 0
   new_name = arguments.first
   dir = "./"
+  setup_config_files
   rename dir, "BoosterKit", new_name
   mv dir, dir.sub("BoosterKit", new_name) if dir.include? "BoosterKit"
-  puts "(You must include -f to actually perform the replacements)" if DRY
+  setup_pods
+  puts "(You must include -f to actually perform the setup)" if DRY
 else
   puts "Usage: setup_new_project.rb PROJECT_NAME"
 end
