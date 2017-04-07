@@ -29,7 +29,7 @@ end
 def rename dir, this, that
   Dir.chdir dir do
     dirs = Dir["*"].select { |f| File.directory? f }
-    files = Dir["*"].reject { |f| File.directory? f }
+    files = Dir["*"].reject { |f| File.directory?(f) || f == "setup_new_project.rb" }
     # Traverse subdirectories
     dirs.each do |sub|
       rename sub, this, that
