@@ -8,6 +8,9 @@
 
 import UIKit
 import RealmSwift
+import SwiftyBeaver
+
+let logger = SwiftyBeaver.self
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,12 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         BuddyBuildSDK.setup()
+        configureLogger()
 
         let realmDBLocation = Realm.Configuration.defaultConfiguration.fileURL ?? URL(fileURLWithPath: "")
-        NSLog("Realm DB: \(realmDBLocation)")
+        logger.info("Realm DB: \(realmDBLocation)")
 
         let darkSkyAPIKey = Bundle.main.infoDictionary?["DarkSkyAPIKey"] ?? ""
-        NSLog("DarkSkyAPIKey: \(darkSkyAPIKey)")
+        logger.info("DarkSkyAPIKey: \(darkSkyAPIKey)")
 
         return true
     }
@@ -56,5 +60,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also
         // applicationDidEnterBackground:.
+    }
+
+    func configureLogger() {
+        // log to Xcode console
+        let console = ConsoleDestination()
+        console.minLevel = .info
+
+        logger.addDestination(console)
     }
 }

@@ -28,15 +28,15 @@ class APIManager {
                 realm.beginWrite()
 
                 for photo in photoArray {
-                    NSLog("Photo \(photo)")
+                    logger.debug("Photo \(photo)")
                     realm.add(photo, update: true)
                 }
 
                 do {
-                    NSLog("Saving photos.")
+                    logger.debug("Saving photos.")
                     try realm.commitWrite()
                 } catch {
-                    NSLog("Failed saving photos!")
+                    logger.error("Failed saving photos!")
                 }
 
                 DispatchQueue.main.async {
