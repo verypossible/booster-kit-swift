@@ -24,7 +24,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
             // Ensure we're reloading in the main thread,
             // otherwise the tableview won't properly reload.
             DispatchQueue.main.async {
-                NSLog("Reloading tableView.")
+                logger.debug("Reloading tableView.")
                 self.tableView.reloadData()
             }
         }
@@ -92,7 +92,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } catch PhotosViewControllerError.invalidThumbnail {
             cell.imageView?.image = nil
         } catch {
-            NSLog("Error populating cell: \(error)")
+            logger.error("Error populating cell: \(error)")
         }
 
         return cell
