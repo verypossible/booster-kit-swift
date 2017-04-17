@@ -287,6 +287,7 @@
 			buildConfigurationList = CECCC01B1DBA8FE700789698 /* Build configuration list for PBXNativeTarget "BoosterKit" */;
 			buildPhases = (
 				27DF529FF5659877294379F0 /* [CP] Check Pods Manifest.lock */,
+				CE1027F31EA4FB9300BA2A9C /* ShellScript */,
 				CECCBFEF1DBA8FE600789698 /* Sources */,
 				CECCBFF01DBA8FE600789698 /* Frameworks */,
 				CECCBFF11DBA8FE600789698 /* Resources */,
@@ -495,6 +496,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BoosterKitTests/Pods-BoosterKitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CE1027F31EA4FB9300BA2A9C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ./buddybuild_prebuild.sh;
 		};
 		CE2E1EE81E8D7B9000AC5EDC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
