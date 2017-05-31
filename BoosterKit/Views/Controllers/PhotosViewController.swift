@@ -44,9 +44,8 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Get realm and table instances for the main thread.
-        let realm = try! Realm()
-        self.photos = realm.objects(Photo.self)
+        // swiftlint:disable:next force_try
+        self.photos = try! Realm().objects(Photo.self)
     }
 
     override func didReceiveMemoryWarning() {
