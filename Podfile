@@ -2,7 +2,7 @@
 # platform :ios, '9.0'
 
 target 'BoosterKit' do
-    
+
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
@@ -11,18 +11,23 @@ target 'BoosterKit' do
   pod 'BuddyBuildSDK'
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
+  pod 'SwiftLint'
+  pod 'SwiftyBeaver'
 
   target 'BoosterKitTests' do
     inherit! :search_paths
     # Pods for testing
-    
+
     pod 'Quick'
     pod 'Nimble'
+    pod 'Nocilla', git: 'git@github.com:pcantrell/Nocilla.git', branch: 'null-annotations'
   end
 
-  target 'BoosterKitUITests' do
+  target 'BoosterKitFeatures' do
     inherit! :search_paths
     # Pods for UI testing
+
+    pod 'KIF'
   end
 end
 

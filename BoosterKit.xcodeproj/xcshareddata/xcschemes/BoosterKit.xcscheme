@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -43,9 +43,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CECCC0111DBA8FE700789698"
-               BuildableName = "BoosterKitUITests.xctest"
-               BlueprintName = "BoosterKitUITests"
+               BlueprintIdentifier = "CE1ECBA91E52443B00F4A7C9"
+               BuildableName = "BoosterKitFeatures.xctest"
+               BlueprintName = "BoosterKitFeatures"
                ReferencedContainer = "container:BoosterKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
