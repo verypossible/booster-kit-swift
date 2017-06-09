@@ -9,21 +9,21 @@
 import Foundation
 
 class LoginViewController: UIViewController {
-    
+
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var passwordConfirmationTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
-    
+
     @IBAction func loginButtonPressed () {
-        
+
         // We're using the trailing closure syntax here:
         // http://tinyurl.com/gnm3noo
         APIManager.authenticateUser(
             email: emailTextField.text!,
             password: passwordTextField.text!,
-            password_confirmation: passwordConfirmationTextField.text!) {
-                
+            passwordConfirmation: passwordConfirmationTextField.text!) {
+
             NSLog("Successfully authenticated!")
         }
     }

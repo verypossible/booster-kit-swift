@@ -43,7 +43,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+
         // swiftlint:disable:next force_try
         self.photos = try! Realm().objects(Photo.self)
     }

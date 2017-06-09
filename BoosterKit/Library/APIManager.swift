@@ -13,7 +13,7 @@ import RealmSwift
 class APIManager {
 
     struct Constants {
-        static let apiURL = "http://localhost:3000/api"
+        static let apiURL = "https://booster-kit-swift-api.herokuapp.com/api"
     }
 
     public class func fetchData (completionClosure: @escaping () -> Void) {
@@ -46,19 +46,27 @@ class APIManager {
             }
         }
     }
-    
-    public class func authenticateUser (email: String, password: String, password_confirmation: String, completionClosure: @escaping () -> ()) {
+
+    public class func authenticateUser (
+        email: String,
+        password: String,
+        passwordConfirmation: String,
+        completionClosure: @escaping () -> Void) {
         let parameters = [
             "email": email,
             "password": password,
-            "password_confirmation": password_confirmation
+            "password_confirmation": passwordConfirmation
         ]
-        
-        Alamofire.request("\(Constants.apiURL)/auth/sign_in", method: .post, parameters: parameters, encoding: JSONEncoding.default)
-            .validate()
+
+        Alamofire.request(
+            "\(Constants.apiURL)/auth/sign_in",
+            method: .post,
+            parameters: parameters,
+            encoding: JSONEncoding.default
+            ).validate()
             .responseJSON { response in
                 print("Success: \(response.result.isSuccess)")
-                print("Response String: \(response.response)")
+                print("Response String: \(response.response?.description ?? "")")
                 switch response.result {
                 case .success:
                     completionClosure()
