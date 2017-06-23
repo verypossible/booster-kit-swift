@@ -65,7 +65,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func configureLogger() {
         // log to Xcode console
         let console = ConsoleDestination()
-        console.minLevel = .info
+        
+        // Log levels:
+        // Verbose
+        // Debug
+        // Info
+        // Warning
+        // Error
+        console.minLevel = .debug
 
         logger.addDestination(console)
     }
