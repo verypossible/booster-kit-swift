@@ -13,6 +13,7 @@ target 'BoosterKit' do
   pod 'AlamofireObjectMapper'
   pod 'SwiftLint'
   pod 'SwiftyBeaver'
+  pod 'KeychainAccess'
 
   target 'BoosterKitTests' do
     inherit! :search_paths

@@ -29,8 +29,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             passwordConfirmation: passwordConfirmationTextField.text!) {
 
                 logger.info("Successfully authenticated!")
-                APIManager.fetchData {}
                 self.performSegue(withIdentifier: "loginSegue", sender: self)
+                APIManager.fetchData {}
         }
     }
 

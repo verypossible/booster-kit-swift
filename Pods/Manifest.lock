@@ -4,6 +4,7 @@ PODS:
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
   - BuddyBuildSDK (1.0.15)
+  - KeychainAccess (3.0.2)
   - KIF (3.5.1):
     - KIF/Core (= 3.5.1)
   - KIF/Core (3.5.1)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireObjectMapper
   - BuddyBuildSDK
+  - KeychainAccess
   - KIF
   - Nimble
   - Nocilla (from `git@github.com:pcantrell/Nocilla.git`, branch `null-annotations`)
@@ -45,6 +47,7 @@ SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
   BuddyBuildSDK: b3038125612b1ad389c2aa89e4787dcb75cac89a
+  KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
   KIF: 082eb65279e51c3092923802849eb796a04982ab
   Nimble: c53e6903fee94041b90ded74f135820437d8bf59
   Nocilla: 7af7a386071150cc8aa5da4da97d060f049dd61c
@@ -55,6 +58,6 @@ SPEC CHECKSUMS:
   SwiftLint: b467d08f5b25dc3b3cfed243d8e1b74b91714c67
   SwiftyBeaver: ee865c50ec462ff142f232145057818491c2b344
 
-PODFILE CHECKSUM: dbcd0fe44b8c265f1540c567543950af38a2142f
+PODFILE CHECKSUM: 072b84026551cbdb35a54b8cea4b3bdd4584c2e6
 
 COCOAPODS: 1.1.1

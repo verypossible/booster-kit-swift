@@ -9,8 +9,10 @@
 import UIKit
 import RealmSwift
 import SwiftyBeaver
+import KeychainAccess
 
 let logger = SwiftyBeaver.self
+let keychain = Keychain(service: "spartan.BoosterKit")
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -65,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func configureLogger() {
         // log to Xcode console
         let console = ConsoleDestination()
-        
+
         // Log levels:
         // Verbose
         // Debug

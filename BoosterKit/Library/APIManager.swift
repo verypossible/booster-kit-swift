@@ -17,7 +17,16 @@ class APIManager {
     }
 
     public class func fetchData (completionClosure: @escaping () -> Void) {
-        Alamofire.request("\(Constants.apiURL)/photos/index").responseArray { (response: DataResponse<[Photo]>) in
+        let headers: HTTPHeaders = [
+            "Access-Token": keychain["Access-Token"] ?? "",
+            "Client": keychain["Client"] ?? "",
+            "Uid": keychain["Uid"] ?? ""
+        ]
+
+        Alamofire.request(
+            "\(Constants.apiURL)/photos/index",
+            headers: headers).responseArray { (response: DataResponse<[Photo]>) in
+
             let photoArray = response.result.value! as [Photo]
 
             DispatchQueue.global(qos: .background).async {
@@ -68,6 +77,11 @@ class APIManager {
                 logger.debug("Sign In: \(response.result.isSuccess)")
                 switch response.result {
                 case .success:
+                    if let headers = response.response?.allHeaderFields as? [String: String] {
+                        keychain["Access-Token"] = headers["Access-Token"]
+                        keychain["Client"] = headers["Client"]
+                        keychain["Uid"] = headers["Uid"]
+                    }
                     completionClosure()
                 case .failure(let error):
                     logger.error(error)
