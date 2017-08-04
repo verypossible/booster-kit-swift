@@ -5,9 +5,9 @@ PODS:
     - ObjectMapper (~> 2.0)
   - BuddyBuildSDK (1.0.15)
   - KeychainAccess (3.0.2)
-  - KIF (3.5.1):
-    - KIF/Core (= 3.5.1)
-  - KIF/Core (3.5.1)
+  - KIF (3.5.2):
+    - KIF/Core (= 3.5.2)
+  - KIF/Core (3.5.2)
   - Nimble (6.1.0)
   - Nocilla (0.11.0)
   - ObjectMapper (2.2.5)
@@ -48,7 +48,7 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
   BuddyBuildSDK: b3038125612b1ad389c2aa89e4787dcb75cac89a
   KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
-  KIF: 082eb65279e51c3092923802849eb796a04982ab
+  KIF: f2a6025bb3f11692df675054a134d43a9ec2d7db
   Nimble: c53e6903fee94041b90ded74f135820437d8bf59
   Nocilla: 7af7a386071150cc8aa5da4da97d060f049dd61c
   ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898

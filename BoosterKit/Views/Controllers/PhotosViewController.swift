@@ -19,16 +19,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     @IBOutlet var tableView: UITableView!
-    var photos: Results<Photo> {
-        didSet {
-            // Ensure we're reloading in the main thread,
-            // otherwise the tableview won't properly reload.
-            DispatchQueue.main.async {
-                logger.debug("Reloading tableView.")
-                self.tableView.reloadData()
-            }
-        }
-    }
+    var photos: Results<Photo>
     var selectedCellIndex: Int
 
     required init?(coder aDecoder: NSCoder) {
@@ -44,8 +35,17 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+        self.tableView.accessibilityLabel = "Photos List"
+        
         // swiftlint:disable:next force_try
         self.photos = try! Realm().objects(Photo.self)
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.updateUI(notification:)),
+            name: Notification.Name("PhotosChanged"),
+            object: nil
+        )
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,6 +75,15 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.imageView?.image = image
 
         return cell
+    }
+
+    func updateUI (notification: Notification) {
+        // Ensure we're reloading in the main thread,
+        // otherwise the tableview won't properly reload.
+        DispatchQueue.main.async {
+            logger.debug("Reloading tableView.")
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: UITableView delegate methods

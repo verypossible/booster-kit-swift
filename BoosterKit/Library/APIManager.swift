@@ -44,6 +44,10 @@ class APIManager {
                 do {
                     logger.debug("Saving photos.")
                     try realm.commitWrite()
+                    NotificationCenter.default.post(
+                        name: Notification.Name("PhotosChanged"),
+                        object: self
+                    )
                 } catch {
                     logger.error("Failed saving photos!")
                 }
