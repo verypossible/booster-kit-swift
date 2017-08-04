@@ -12,6 +12,7 @@ import Quick
 import Nimble
 import RealmSwift
 import Nocilla
+import KeychainAccess
 
 class APIManagerSpecs: QuickSpec {
     override func spec() {
@@ -45,6 +46,37 @@ class APIManagerSpecs: QuickSpec {
         }
 
         describe("authenticateUser") {
+            it("authenticates a user and saves session data to the keychain") {
+
+                keychain["Access-Token"] = nil
+                keychain["Client"] = nil
+                keychain["Uid"] = nil
+
+                let authHeaders = [
+                    "Access-Token": "secrettoken",
+                    "Client": "clientid",
+                    "Uid": "test@verypossible.com"
+                ]
+                let authBody =
+                    "{\"data\":{\"id\":1,\"email\":\"test@verypossible.com\",\"provider\":\"email\"," +
+                    "\"uid\":\"test@verypossible.com\",\"name\":null,\"nickname\":null,\"image\":null}}"
+
+                // We don't care about the return value here, hence the weird _ = syntax.
+                _ = stubRequest("POST",
+                    "https://booster-kit-swift-api.herokuapp.com/api/auth/sign_in" as LSMatcheable)
+                    .andReturn(200)
+                    .withHeaders(authHeaders)
+                    .withBody(authBody as LSHTTPBody)
+
+                APIManager.authenticateUser(
+                    email: "test@verypossible.com",
+                    password: "password",
+                    passwordConfirmation: "password") {}
+
+                expect(keychain["Access-Token"]).toEventually(equal("secrettoken"))
+                expect(keychain["Client"]).toEventually(equal("clientid"))
+                expect(keychain["Uid"]).toEventually(equal("test@verypossible.com"))
+            }
         }
 
         LSNocilla.sharedInstance().stop()
