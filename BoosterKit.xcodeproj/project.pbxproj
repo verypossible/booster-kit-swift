@@ -21,6 +21,7 @@
 		CE529BAF1E892A57007FCED6 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE529BAB1E892A57007FCED6 /* Release.xcconfig */; };
 		CE529BB21E892A9A007FCED6 /* BoosterKit.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE529BB11E892A9A007FCED6 /* BoosterKit.xcconfig */; };
 		CE529BB41E893008007FCED6 /* buddybuild_prebuild.sh in Resources */ = {isa = PBXBuildFile; fileRef = CE529BB31E893008007FCED6 /* buddybuild_prebuild.sh */; };
+		CE5506C81F06A61B002FC182 /* APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5506C71F06A61B002FC182 /* APIManagerTests.swift */; };
 		CEB08BDD1E044D740088E2D0 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB08BDB1E044D740088E2D0 /* PhotoDetailViewController.swift */; };
 		CEB08BDE1E044D740088E2D0 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB08BDC1E044D740088E2D0 /* PhotosViewController.swift */; };
 		CEB08BE11E044D840088E2D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB08BDF1E044D840088E2D0 /* LaunchScreen.storyboard */; };
@@ -75,6 +76,7 @@
 		CE529BAB1E892A57007FCED6 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Config/Release.xcconfig; sourceTree = "<group>"; };
 		CE529BB11E892A9A007FCED6 /* BoosterKit.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = BoosterKit.xcconfig; path = Config/BoosterKit.xcconfig; sourceTree = "<group>"; };
 		CE529BB31E893008007FCED6 /* buddybuild_prebuild.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = buddybuild_prebuild.sh; sourceTree = "<group>"; };
+		CE5506C71F06A61B002FC182 /* APIManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
 		CEB08BDB1E044D740088E2D0 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoDetailViewController.swift; path = Views/Controllers/PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		CEB08BDC1E044D740088E2D0 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotosViewController.swift; path = Views/Controllers/PhotosViewController.swift; sourceTree = "<group>"; };
 		CEB08BDF1E044D840088E2D0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Views/Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				CECCC00D1DBA8FE700789698 /* Info.plist */,
 				CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */,
 				CEF83BC61E296C33004B4453 /* BoosterKitTests-Bridging-Header.h */,
+				CE5506C71F06A61B002FC182 /* APIManagerTests.swift */,
 			);
 			path = BoosterKitTests;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 			files = (
 				CE2E4B681DD614A5007A86E6 /* XCTestCaseExtension.swift in Sources */,
 				CECCC00C1DBA8FE700789698 /* PhotosViewControllerTests.swift in Sources */,
+				CE5506C81F06A61B002FC182 /* APIManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
