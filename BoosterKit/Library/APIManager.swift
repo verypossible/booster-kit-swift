@@ -13,11 +13,20 @@ import RealmSwift
 class APIManager {
 
     struct Constants {
-        static let apiURL = "https://jsonplaceholder.typicode.com/photos"
+        static let apiURL = "https://booster-kit-swift-api.herokuapp.com/api"
     }
 
     public class func fetchData (completionClosure: @escaping () -> Void) {
-        Alamofire.request(Constants.apiURL).responseArray { (response: DataResponse<[Photo]>) in
+        let headers: HTTPHeaders = [
+            "Access-Token": keychain["Access-Token"] ?? "",
+            "Client": keychain["Client"] ?? "",
+            "Uid": keychain["Uid"] ?? ""
+        ]
+
+        Alamofire.request(
+            "\(Constants.apiURL)/photos/index",
+            headers: headers).responseArray { (response: DataResponse<[Photo]>) in
+
             let photoArray = response.result.value! as [Photo]
 
             DispatchQueue.global(qos: .background).async {
@@ -35,6 +44,10 @@ class APIManager {
                 do {
                     logger.debug("Saving photos.")
                     try realm.commitWrite()
+                    NotificationCenter.default.post(
+                        name: Notification.Name("PhotosChanged"),
+                        object: self
+                    )
                 } catch {
                     logger.error("Failed saving photos!")
                 }
@@ -44,6 +57,39 @@ class APIManager {
                     completionClosure()
                 }
             }
+        }
+    }
+
+    public class func authenticateUser (
+        email: String,
+        password: String,
+        passwordConfirmation: String,
+        completionClosure: @escaping () -> Void) {
+        let parameters = [
+            "email": email,
+            "password": password,
+            "password_confirmation": passwordConfirmation
+        ]
+
+        Alamofire.request(
+            "\(Constants.apiURL)/auth/sign_in",
+            method: .post,
+            parameters: parameters,
+            encoding: JSONEncoding.default
+            ).validate()
+            .responseJSON { response in
+                logger.debug("Sign In: \(response.result.isSuccess)")
+                switch response.result {
+                case .success:
+                    if let headers = response.response?.allHeaderFields as? [String: String] {
+                        keychain["Access-Token"] = headers["Access-Token"]
+                        keychain["Client"] = headers["Client"]
+                        keychain["Uid"] = headers["Uid"]
+                    }
+                    completionClosure()
+                case .failure(let error):
+                    logger.error(error)
+                }
         }
     }
 }

@@ -11,15 +11,17 @@
 		9935239B245D5B0F3968EB05 /* Pods_BoosterKitFeatures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6C3E2003311DC44410F7CA /* Pods_BoosterKitFeatures.framework */; };
 		A22F2DDFEEEF5ED3B80F2E0C /* Pods_BoosterKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E189E363381AB431C35D8A /* Pods_BoosterKitTests.framework */; };
 		CE1BE4311DBA996600DD6C44 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BE4301DBA996600DD6C44 /* Photo.swift */; };
-		CE1ECBBC1E5244CF00F4A7C9 /* KIFTestActorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1ECBB91E5244CF00F4A7C9 /* KIFTestActorExtension.swift */; };
 		CE1ECBBD1E5244CF00F4A7C9 /* PhotosViewControllerFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1ECBBA1E5244CF00F4A7C9 /* PhotosViewControllerFeatures.swift */; };
 		CE1ECBBE1E5244CF00F4A7C9 /* XCTestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1ECBBB1E5244CF00F4A7C9 /* XCTestCaseExtension.swift */; };
 		CE2E4B681DD614A5007A86E6 /* XCTestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */; };
+		CE3E4C961E297227007A68EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E4C951E297227007A68EA /* LoginViewController.swift */; };
+		CE4025651F34C9D9008B535E /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4025641F34C9D9008B535E /* BaseTestCase.swift */; };
 		CE529BAD1E892A57007FCED6 /* check_config_files.rb in Resources */ = {isa = PBXBuildFile; fileRef = CE529BA91E892A57007FCED6 /* check_config_files.rb */; };
 		CE529BAE1E892A57007FCED6 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE529BAA1E892A57007FCED6 /* Debug.xcconfig */; };
 		CE529BAF1E892A57007FCED6 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE529BAB1E892A57007FCED6 /* Release.xcconfig */; };
 		CE529BB21E892A9A007FCED6 /* BoosterKit.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE529BB11E892A9A007FCED6 /* BoosterKit.xcconfig */; };
 		CE529BB41E893008007FCED6 /* buddybuild_prebuild.sh in Resources */ = {isa = PBXBuildFile; fileRef = CE529BB31E893008007FCED6 /* buddybuild_prebuild.sh */; };
+		CE5506C81F06A61B002FC182 /* APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5506C71F06A61B002FC182 /* APIManagerTests.swift */; };
 		CEB08BDD1E044D740088E2D0 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB08BDB1E044D740088E2D0 /* PhotoDetailViewController.swift */; };
 		CEB08BDE1E044D740088E2D0 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB08BDC1E044D740088E2D0 /* PhotosViewController.swift */; };
 		CEB08BE11E044D840088E2D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB08BDF1E044D840088E2D0 /* LaunchScreen.storyboard */; };
@@ -63,16 +65,18 @@
 		CE1ECBAA1E52443B00F4A7C9 /* BoosterKitFeatures.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoosterKitFeatures.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1ECBAE1E52443B00F4A7C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE1ECBB81E5244CE00F4A7C9 /* BoosterKitFeatures-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BoosterKitFeatures-Bridging-Header.h"; sourceTree = "<group>"; };
-		CE1ECBB91E5244CF00F4A7C9 /* KIFTestActorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KIFTestActorExtension.swift; sourceTree = "<group>"; };
 		CE1ECBBA1E5244CF00F4A7C9 /* PhotosViewControllerFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewControllerFeatures.swift; sourceTree = "<group>"; };
 		CE1ECBBB1E5244CF00F4A7C9 /* XCTestCaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtension.swift; sourceTree = "<group>"; };
 		CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtension.swift; sourceTree = "<group>"; };
 		CE2E4B691DD62BBC007A86E6 /* BoosterKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BoosterKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE3E4C951E297227007A68EA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Views/Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		CE4025641F34C9D9008B535E /* BaseTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		CE529BA91E892A57007FCED6 /* check_config_files.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = check_config_files.rb; path = Config/check_config_files.rb; sourceTree = "<group>"; };
 		CE529BAA1E892A57007FCED6 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Config/Debug.xcconfig; sourceTree = "<group>"; };
 		CE529BAB1E892A57007FCED6 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Config/Release.xcconfig; sourceTree = "<group>"; };
 		CE529BB11E892A9A007FCED6 /* BoosterKit.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = BoosterKit.xcconfig; path = Config/BoosterKit.xcconfig; sourceTree = "<group>"; };
 		CE529BB31E893008007FCED6 /* buddybuild_prebuild.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = buddybuild_prebuild.sh; sourceTree = "<group>"; };
+		CE5506C71F06A61B002FC182 /* APIManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
 		CEB08BDB1E044D740088E2D0 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoDetailViewController.swift; path = Views/Controllers/PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		CEB08BDC1E044D740088E2D0 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotosViewController.swift; path = Views/Controllers/PhotosViewController.swift; sourceTree = "<group>"; };
 		CEB08BDF1E044D840088E2D0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Views/Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -139,11 +143,11 @@
 		CE1ECBAB1E52443B00F4A7C9 /* BoosterKitFeatures */ = {
 			isa = PBXGroup;
 			children = (
-				CE1ECBB91E5244CF00F4A7C9 /* KIFTestActorExtension.swift */,
-				CE1ECBBA1E5244CF00F4A7C9 /* PhotosViewControllerFeatures.swift */,
-				CE1ECBBB1E5244CF00F4A7C9 /* XCTestCaseExtension.swift */,
 				CE1ECBAE1E52443B00F4A7C9 /* Info.plist */,
 				CE1ECBB81E5244CE00F4A7C9 /* BoosterKitFeatures-Bridging-Header.h */,
+				CE4025641F34C9D9008B535E /* BaseTestCase.swift */,
+				CE1ECBBA1E5244CF00F4A7C9 /* PhotosViewControllerFeatures.swift */,
+				CE1ECBBB1E5244CF00F4A7C9 /* XCTestCaseExtension.swift */,
 			);
 			path = BoosterKitFeatures;
 			sourceTree = "<group>";
@@ -173,6 +177,7 @@
 			children = (
 				CEB08BDB1E044D740088E2D0 /* PhotoDetailViewController.swift */,
 				CEB08BDC1E044D740088E2D0 /* PhotosViewController.swift */,
+				CE3E4C951E297227007A68EA /* LoginViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -235,10 +240,11 @@
 		CECCC00A1DBA8FE700789698 /* BoosterKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				CECCC00B1DBA8FE700789698 /* PhotosViewControllerTests.swift */,
 				CECCC00D1DBA8FE700789698 /* Info.plist */,
-				CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */,
 				CEF83BC61E296C33004B4453 /* BoosterKitTests-Bridging-Header.h */,
+				CE5506C71F06A61B002FC182 /* APIManagerTests.swift */,
+				CECCC00B1DBA8FE700789698 /* PhotosViewControllerTests.swift */,
+				CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */,
 			);
 			path = BoosterKitTests;
 			sourceTree = "<group>";
@@ -575,9 +581,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4025651F34C9D9008B535E /* BaseTestCase.swift in Sources */,
 				CE1ECBBD1E5244CF00F4A7C9 /* PhotosViewControllerFeatures.swift in Sources */,
 				CE1ECBBE1E5244CF00F4A7C9 /* XCTestCaseExtension.swift in Sources */,
-				CE1ECBBC1E5244CF00F4A7C9 /* KIFTestActorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3E4C961E297227007A68EA /* LoginViewController.swift in Sources */,
 				CEB08BDD1E044D740088E2D0 /* PhotoDetailViewController.swift in Sources */,
 				CEB08BDE1E044D740088E2D0 /* PhotosViewController.swift in Sources */,
 				CEB08BE51E0450700088E2D0 /* APIManager.swift in Sources */,
@@ -599,6 +606,7 @@
 			files = (
 				CE2E4B681DD614A5007A86E6 /* XCTestCaseExtension.swift in Sources */,
 				CECCC00C1DBA8FE700789698 /* PhotosViewControllerTests.swift in Sources */,
+				CE5506C81F06A61B002FC182 /* APIManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
