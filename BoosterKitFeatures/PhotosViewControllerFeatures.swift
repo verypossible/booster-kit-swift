@@ -13,6 +13,7 @@ class PhotosViewControllerFeatures: BaseTestCase {
 
     func testPresenceOfPhotoViews() {
         viewTester().usingLabel("Photos View").waitForView()
+        viewTester().usingLabel("Photos List").waitForView()
         viewTester().usingLabel("Photos List").tapRowInTableView(at: IndexPath(row: 1, section: 0))
         viewTester().usingLabel("Photo Detail").waitForView()
     }
