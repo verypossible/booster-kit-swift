@@ -19,11 +19,11 @@ class Photo: Object, Mappable {
 //    return []
 //  }
 
-    dynamic var albumId = 0
-    dynamic var photoId = 0
-    dynamic var title = ""
-    dynamic var url = ""
-    dynamic var thumbnailUrl = ""
+    @objc dynamic var albumId = 0
+    @objc dynamic var photoId = 0
+    @objc dynamic var title = ""
+    @objc dynamic var url = ""
+    @objc dynamic var thumbnailUrl = ""
 
     override static func primaryKey() -> String? {
         return "photoId"
