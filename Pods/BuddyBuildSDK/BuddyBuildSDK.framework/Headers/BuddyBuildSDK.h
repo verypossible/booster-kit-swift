@@ -3,9 +3,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIApplication.h>
 
-typedef NSString*(^BBReturnNSStringCallback)();
-typedef BOOL (^BBReturnBooleanCallback)();
-typedef void (^BBCallback)();
+typedef NSString*(^BBReturnNSStringCallback)(void);
+typedef BOOL (^BBReturnBooleanCallback)(void);
+typedef void (^BBCallback)(void);
 
 @interface BuddyBuildSDK : NSObject
 
@@ -20,10 +20,10 @@ typedef void (^BBCallback)();
 + (void)setup;
 
 /*
- * Associate arbitrary key/value pairs with your crash reports
+ * Associate arbitrary key/value pairs with your crash reports and user feedback
  * which will be visible from the buddybuild dashboard
  */
-+ (void)setCrashMetadataObject:(id)object forKey:(NSString*)key;
++ (void)setMetadataObject:(id)object forKey:(NSString*)key;
 
 /*
  * Programatically trigger the screenshot feedback UI without pressing the screenshot buttons
@@ -160,6 +160,12 @@ typedef void (^BBCallback)();
  * Only run in buddybuild while the UI tests run. It will not run locally, on real iOS devices or on TestFlight and App Store installs.
  */
 + (void)uiTestsDidReceiveRemoteNotification:(NSDictionary *)userInfo;
+
+/*
+ * DEPRECATED IN SDK 1.0.16+, use setMetadataObject:forKey:
+ */
++ (void)setCrashMetadataObject:(id)object forKey:(NSString*)key __deprecated_msg("Use setMetadataObject:forKey: instead");
+
 
 @end
 
