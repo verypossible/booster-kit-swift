@@ -36,7 +36,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Do any additional setup after loading the view, typically from a nib.
 
         self.tableView.accessibilityLabel = "Photos List"
-        
+
         // swiftlint:disable:next force_try
         self.photos = try! Realm().objects(Photo.self)
 
@@ -77,7 +77,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
 
-    func updateUI (notification: Notification) {
+    @objc func updateUI (notification: Notification) {
         // Ensure we're reloading in the main thread,
         // otherwise the tableview won't properly reload.
         DispatchQueue.main.async {

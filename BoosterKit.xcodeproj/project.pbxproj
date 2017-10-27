@@ -343,18 +343,18 @@
 				TargetAttributes = {
 					CE1ECBA91E52443B00F4A7C9 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = CECCBFF21DBA8FE600789698;
 					};
 					CECCBFF21DBA8FE600789698 = {
 						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					CECCC0061DBA8FE700789698 = {
 						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = CECCBFF21DBA8FE600789698;
 					};
@@ -640,7 +640,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BoosterKitFeatures/BoosterKitFeatures-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoosterKit.app/BoosterKit";
 			};
 			name = Debug;
@@ -658,7 +659,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = spartan.BoosterKitFeatures;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BoosterKitFeatures/BoosterKitFeatures-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoosterKit.app/BoosterKit";
 			};
 			name = Release;
@@ -774,7 +776,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BoosterKit/BoosterKit-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -791,7 +794,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = spartan.BoosterKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BoosterKit/BoosterKit-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -808,7 +812,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BoosterKitTests/BoosterKitTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoosterKit.app/BoosterKit";
 			};
 			name = Debug;
@@ -825,7 +830,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = spartan.BoosterKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BoosterKitTests/BoosterKitTests-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoosterKit.app/BoosterKit";
 			};
 			name = Release;
