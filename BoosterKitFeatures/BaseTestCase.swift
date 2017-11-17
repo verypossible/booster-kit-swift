@@ -12,14 +12,27 @@ import KIF
 import RealmSwift
 
 class BaseTestCase: KIFTestCase {
-    override func setUp() {
-        super.setUp()
-
+    override func beforeEach() {
         Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
+
+        super.beforeEach()
     }
 
-    override func tearDown() {
-        super.tearDown()
+    override func afterEach() {
+        returnToRootViewController()
+    }
+
+    func returnToRootViewController() {
+        guard let navigation = UIApplication.shared.keyWindow!.rootViewController as? UINavigationController else {
+            NSException.raise(
+                NSExceptionName.genericException,
+                format: "Failed to assign root view controller",
+                arguments: getVaList([])
+            )
+            return
+        }
+
+        navigation.popToRootViewController(animated: false)
     }
 
     func loginUser() {
