@@ -6,7 +6,6 @@
 //  Copyright © 2017 Spartan. All rights reserved.
 //
 
-import XCTest
 @testable import BoosterKit
 import Quick
 import Nimble
@@ -14,20 +13,18 @@ import RealmSwift
 import Nocilla
 import KeychainAccess
 
-class APIManagerSpecs: QuickSpec {
+class APIManagerSpecs: BaseSpec {
     override func spec() {
-        LSNocilla.sharedInstance().start()
-        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
-
         describe("fetchData") {
             it("persists photos") {
-                let stubbedBody =
-                    "[{\"id\": 1, \"albumId\": 1, \"title\": \"photo 1\"," +
-                    "\"url\": \"someUrl\", \"thumbnailUrl\": \"anotherUrl\"}," +
-                    "{\"id\": 2, \"albumId\": 2, \"title\": \"photo 2\"," +
-                    "\"url\": \"someUrl\", \"thumbnailUrl\": \"anotherUrl\"}," +
-                    "{\"id\": 3, \"albumId\": 3, \"title\": \"photo 3\"," +
-                    "\"url\": \"someUrl\", \"thumbnailUrl\": \"anotherUrl\"}]"
+                
+                let stubbedBody = """
+                    [
+                     {"id": 1, "albumId": 1, "title": "photo 1", "url": "someUrl", "thumbnailUrl": "anotherUrl"},
+                     {"id": 2, "albumId": 2, "title": "photo 2", "url": "someUrl", "thumbnailUrl": "anotherUrl"},
+                     {"id": 3, "albumId": 3, "title": "photo 3", "url": "someUrl", "thumbnailUrl": "anotherUrl"}
+                    ]
+                   """
 
                 // We don't care about the return value here, hence the weird _ = syntax.
                 _ = stubRequest("GET",
@@ -57,9 +54,19 @@ class APIManagerSpecs: QuickSpec {
                     "Client": "clientid",
                     "Uid": "test@verypossible.com"
                 ]
-                let authBody =
-                    "{\"data\":{\"id\":1,\"email\":\"test@verypossible.com\",\"provider\":\"email\"," +
-                    "\"uid\":\"test@verypossible.com\",\"name\":null,\"nickname\":null,\"image\":null}}"
+                let authBody = """
+                    {
+                     "data": {
+                        "id":1,
+                        "email":"test@verypossible.com",
+                        "provider":"email",
+                        "uid":"test@verypossible.com",
+                        "name":null,
+                        "nickname":null,
+                        "image":null
+                     }
+                    }
+                   """
 
                 // We don't care about the return value here, hence the weird _ = syntax.
                 _ = stubRequest("POST",
@@ -78,7 +85,5 @@ class APIManagerSpecs: QuickSpec {
                 expect(keychain["Uid"]).toEventually(equal("test@verypossible.com"))
             }
         }
-
-        LSNocilla.sharedInstance().stop()
     }
 }

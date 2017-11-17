@@ -13,7 +13,6 @@
 		CE1BE4311DBA996600DD6C44 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BE4301DBA996600DD6C44 /* Photo.swift */; };
 		CE1ECBBD1E5244CF00F4A7C9 /* PhotosViewControllerFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1ECBBA1E5244CF00F4A7C9 /* PhotosViewControllerFeatures.swift */; };
 		CE1ECBBE1E5244CF00F4A7C9 /* XCTestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1ECBBB1E5244CF00F4A7C9 /* XCTestCaseExtension.swift */; };
-		CE2E4B681DD614A5007A86E6 /* XCTestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */; };
 		CE3E4C961E297227007A68EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E4C951E297227007A68EA /* LoginViewController.swift */; };
 		CE4025651F34C9D9008B535E /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4025641F34C9D9008B535E /* BaseTestCase.swift */; };
 		CE529BAD1E892A57007FCED6 /* check_config_files.rb in Resources */ = {isa = PBXBuildFile; fileRef = CE529BA91E892A57007FCED6 /* check_config_files.rb */; };
@@ -27,6 +26,7 @@
 		CEB08BE11E044D840088E2D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB08BDF1E044D840088E2D0 /* LaunchScreen.storyboard */; };
 		CEB08BE21E044D840088E2D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB08BE01E044D840088E2D0 /* Main.storyboard */; };
 		CEB08BE51E0450700088E2D0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB08BE41E0450700088E2D0 /* APIManager.swift */; };
+		CEB4C3131FBF3778008C9E1A /* BaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4C3121FBF3778008C9E1A /* BaseSpec.swift */; };
 		CECCBFF71DBA8FE600789698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCBFF61DBA8FE600789698 /* AppDelegate.swift */; };
 		CECCBFFE1DBA8FE600789698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECCBFFD1DBA8FE600789698 /* Assets.xcassets */; };
 		CECCC00C1DBA8FE700789698 /* PhotosViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCC00B1DBA8FE700789698 /* PhotosViewControllerTests.swift */; };
@@ -67,7 +67,6 @@
 		CE1ECBB81E5244CE00F4A7C9 /* BoosterKitFeatures-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BoosterKitFeatures-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE1ECBBA1E5244CF00F4A7C9 /* PhotosViewControllerFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewControllerFeatures.swift; sourceTree = "<group>"; };
 		CE1ECBBB1E5244CF00F4A7C9 /* XCTestCaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtension.swift; sourceTree = "<group>"; };
-		CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtension.swift; sourceTree = "<group>"; };
 		CE2E4B691DD62BBC007A86E6 /* BoosterKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BoosterKit-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE3E4C951E297227007A68EA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Views/Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		CE4025641F34C9D9008B535E /* BaseTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		CEB08BDF1E044D840088E2D0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Views/Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEB08BE01E044D840088E2D0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Views/Storyboards/Main.storyboard; sourceTree = "<group>"; };
 		CEB08BE41E0450700088E2D0 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = Library/APIManager.swift; sourceTree = "<group>"; };
+		CEB4C3121FBF3778008C9E1A /* BaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSpec.swift; sourceTree = "<group>"; };
 		CECCBFF31DBA8FE600789698 /* BoosterKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoosterKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECCBFF61DBA8FE600789698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECCBFFD1DBA8FE600789698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 				CEF83BC61E296C33004B4453 /* BoosterKitTests-Bridging-Header.h */,
 				CE5506C71F06A61B002FC182 /* APIManagerTests.swift */,
 				CECCC00B1DBA8FE700789698 /* PhotosViewControllerTests.swift */,
-				CE2E4B671DD614A5007A86E6 /* XCTestCaseExtension.swift */,
+				CEB4C3121FBF3778008C9E1A /* BaseSpec.swift */,
 			);
 			path = BoosterKitTests;
 			sourceTree = "<group>";
@@ -604,9 +604,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE2E4B681DD614A5007A86E6 /* XCTestCaseExtension.swift in Sources */,
 				CECCC00C1DBA8FE700789698 /* PhotosViewControllerTests.swift in Sources */,
 				CE5506C81F06A61B002FC182 /* APIManagerTests.swift in Sources */,
+				CEB4C3131FBF3778008C9E1A /* BaseSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,51 +6,63 @@
 //  Copyright © 2016 Spartan. All rights reserved.
 //
 
-import XCTest
 @testable import BoosterKit
 import Quick
 import Nimble
 import RealmSwift
 import Nocilla
 
-class PhotosViewControllerSpecs: QuickSpec {
+class PhotosViewControllerSpecs: BaseSpec {
     override func spec() {
-        LSNocilla.sharedInstance().start()
-        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
+        var viewController: PhotosViewController!
 
-        describe("initialization") {
-            stubRequest("GET", "https://static.realm.io/update/cocoa".regex())
-            stubRequest("GET", "https://api.mixpanel.com/track".regex())
+        beforeEach {
+            viewController = PhotosViewController(coder: self.concreteCoder())
 
             // swiftlint:disable:next force_try
             let realm = try! Realm()
             // swiftlint:disable:next force_try
             try! realm.write {
+                realm.deleteAll()
                 realm.create(Photo.self, value: [
                     "photoId": 0,
                     "title": "test photo",
                     "thumbnailUrl": "http://test.com"
-                ])
+                    ])
                 realm.create(Photo.self, value: [
                     "photoId": 1,
                     "title": "test photo 2",
                     "thumbnailUrl": "http://test.com"
-                ])
+                    ])
                 realm.create(Photo.self, value: [
                     "photoId": 2,
                     "title": "test photo 3",
                     "thumbnailUrl": "http://test.com"
-                ])
+                    ])
             }
+        }
 
-            let viewController = PhotosViewController(coder: concreteCoder())
-
+        describe("initialization") {
             it("initializes photos") {
                 expect(viewController!.photos.count).to(equal(3))
             }
         }
 
-        LSNocilla.sharedInstance().stop()
+        context("UITableViewDelegate methods") {
+//            func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//                self.selectedCellIndex = indexPath.row
+//                self.performSegue(withIdentifier: Constants.photoDetailSegueId, sender: self)
+//            }
+            describe("didSelectRowAt") {
+                it("sets the selectedCellIndex") {
+
+                }
+
+                it("performs a segue to the detail view") {
+
+                }
+            }
+        }
     }
 
     fileprivate func concreteCoder() -> NSKeyedUnarchiver {
