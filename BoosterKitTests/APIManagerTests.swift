@@ -15,9 +15,17 @@ import KeychainAccess
 
 class APIManagerSpecs: BaseSpec {
     override func spec() {
+        beforeEach {
+            // swiftlint:disable:next force_try
+            let realm = try! Realm()
+            // swiftlint:disable:next force_try
+            try! realm.write {
+                realm.deleteAll()
+            }
+        }
+
         describe("fetchData") {
             it("persists photos") {
-                
                 let stubbedBody = """
                     [
                      {"id": 1, "albumId": 1, "title": "photo 1", "url": "someUrl", "thumbnailUrl": "anotherUrl"},
@@ -44,7 +52,6 @@ class APIManagerSpecs: BaseSpec {
 
         describe("authenticateUser") {
             it("authenticates a user and saves session data to the keychain") {
-
                 keychain["Access-Token"] = nil
                 keychain["Client"] = nil
                 keychain["Uid"] = nil

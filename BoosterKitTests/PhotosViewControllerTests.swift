@@ -12,12 +12,27 @@ import Nimble
 import RealmSwift
 import Nocilla
 
+class PhotosViewControllerMock: PhotosViewController {
+    var performedSeugeIdentifier: String?
+
+    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+        performedSeugeIdentifier = identifier
+    }
+}
+
 class PhotosViewControllerSpecs: BaseSpec {
     override func spec() {
         var viewController: PhotosViewController!
 
         beforeEach {
-            viewController = PhotosViewController(coder: self.concreteCoder())
+            viewController = UIStoryboard(
+                name: "Main",
+                bundle: nil).instantiateViewController(
+                    withIdentifier: "PhotosViewController"
+                ) as? PhotosViewController
+
+            // IBOutlets are nil unless loadView() is called.
+            viewController.loadView()
 
             // swiftlint:disable:next force_try
             let realm = try! Realm()
@@ -49,17 +64,33 @@ class PhotosViewControllerSpecs: BaseSpec {
         }
 
         context("UITableViewDelegate methods") {
-//            func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//                self.selectedCellIndex = indexPath.row
-//                self.performSegue(withIdentifier: Constants.photoDetailSegueId, sender: self)
-//            }
-            describe("didSelectRowAt") {
-                it("sets the selectedCellIndex") {
+            describe("didSelectRowAtIndexPath") {
+                beforeEach {
+                    viewController.viewDidLoad()
+                }
 
+                it("sets the selectedCellIndex") {
+                    expect(viewController.selectedCellIndex).to(equal(0))
+
+                    viewController.tableView(
+                        viewController.tableView,
+                        didSelectRowAt: IndexPath(row: 2, section: 0)
+                    )
+
+                    expect(viewController.selectedCellIndex).to(equal(2))
                 }
 
                 it("performs a segue to the detail view") {
+                    let photosVCMock = PhotosViewControllerMock(coder: self.concreteCoder())!
 
+                    photosVCMock.tableView(
+                        UITableView(),
+                        didSelectRowAt: IndexPath(row: 2, section: 0)
+                    )
+
+                    expect(photosVCMock.performedSeugeIdentifier).to(
+                        equal(PhotosViewController.Constants.photoDetailSegueId)
+                    )
                 }
             }
         }
