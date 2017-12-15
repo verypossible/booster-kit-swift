@@ -10,14 +10,10 @@ import XCTest
 @testable import BoosterKit
 import Quick
 import Nimble
-import RealmSwift
-import Nocilla
 import SwiftyMocky
 
 class LoginViewControllerSpecs: QuickSpec {
     override func spec() {
-        LSNocilla.sharedInstance().start()
-        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
 
         describe("loginButtonPressed") {
 
