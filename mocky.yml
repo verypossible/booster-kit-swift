@@ -1,0 +1,26 @@
+sources:
+  - ./BoosterKit
+  - ./BoosterKit/Library
+  - ./BoosterKit/Models
+  - ./BoosterKit/Views/Controllers
+templates:
+  - ./Pods/SwiftyMocky/Sources/Templates
+output:
+  ./BoosterKitTests
+args:
+  testable:
+    - BoosterKit
+  import:
+    - Alamofire
+    - RealmSwift
+    - ObjectMapper
+    - AlamofireObjectMapper
+  excludedSwiftLintRules:
+    - identifier_name
+    - function_body_length
+    - line_length
+    - vertical_whitespace
+    - trailing_whitespace
+    - comma
+    - switch_case_alignment
+    - trailing_newline

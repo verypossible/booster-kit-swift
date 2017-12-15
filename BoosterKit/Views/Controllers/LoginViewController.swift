@@ -8,6 +8,8 @@
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
+    var APIManagerClass: APIManagerProtocol = APIManager()
+
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var passwordConfirmationTextField: UITextField!
@@ -23,7 +25,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         // We're using the trailing closure syntax here:
         // http://tinyurl.com/gnm3noo
-        APIManager.authenticateUser(
+        type(of: APIManagerClass).authenticateUser(
             email: emailTextField.text!,
             password: passwordTextField.text!,
             passwordConfirmation: passwordConfirmationTextField.text!) {

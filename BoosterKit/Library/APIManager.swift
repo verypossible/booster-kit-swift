@@ -10,7 +10,18 @@ import Foundation
 import Alamofire
 import RealmSwift
 
-class APIManager {
+//sourcery: AutoMockable
+protocol APIManagerProtocol {
+
+    static func fetchData(completionClosure: @escaping () -> Void)
+
+    static func authenticateUser(email: String,
+                                 password: String,
+                                 passwordConfirmation: String,
+                                 completionClosure: @escaping () -> Void)
+}
+
+class APIManager: APIManagerProtocol {
 
     struct Constants {
         static let apiURL = "https://booster-kit-swift-api.herokuapp.com/api"
